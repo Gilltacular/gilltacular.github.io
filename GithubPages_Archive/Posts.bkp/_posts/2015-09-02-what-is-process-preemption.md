@@ -1,0 +1,26 @@
+---
+layout: post
+title: 'What is Process Preemption?'
+date: '2015-09-02T19:11:00.003-07:00'
+author: Jonathan Gill
+tags:
+- computer science
+- education
+- os theory
+---
+
+To preempt a process is to stop a currently scheduled task in favor of a higher priority task. In the context of the operating system, an act of preemption is one in which the OS switches a process from a running status to a ready status without the currently running process requesting it. In contrast, a system which is not preemptive must let the currently running process complete before it can switch to another process. The Techopedia.com article on preemption (2015) states that this requirement “Is called a context switch and is typically performed by the pre-emptive scheduler, a component in the operating system authorized to pre-empt, or interrupt, and later resume tasks running in the system.” One example of a preemption is found in the round robin scheduling technique. When a process hits a required time marker it is preempted, putting it back into the ready state for future use.
+
+That is not to say that preemption and interruption are the same thing though. While preemption and interrupts often go hand in hand, they are different concepts entirely. An interrupt is the action of stopping the running process in some way, while a preemption is the actual act of taking control from one process and giving it to another. A greater explanation of the distinction between these two concepts was presented on the StackOverflow website in which user Ugoren (2012) comments “Preemption will only happen after an interrupt, but an interrupt doesn't always cause preemption.”
+
+The idea of preemption is important in operating systems because with all the calls going on at the operating system level preemption makes sure that no single process blocks up the entire system. If a low priority system call is taking a good amount of time to complete for instance, and a higher priority call must be made, the scheduler can interrupt the low priority process by pausing it and run the higher priority process to completion.
+
+References:
+
+Gottlieb, A. (2003). Operating Systems. Retrieved on 07/29/2015 from: http://cs.nyu.edu/~gottlieb/courses/2000s/2003-04-spring/os2250/lectures/lecture-05.html
+
+Preemption. (2015). Retrieved on 07/29/2015 from: http://www.techopedia.com/definition/27086/pre-emption
+
+Ugoren. (2012, Feb 28). Are there any difference between “kernel preemption” and “interrupt”? Retrieved on 07/29/2015 from: https://stackoverflow.com/questions/9473301/are-there-any-difference-between-kernel-preemption-and-interrupt
+
+Vangala, A. (2012). Preemptive Vs Non Preemptive and Multitasking vs Multithreading. Retrieved on 07/29/2015 from: http://sqljunkieshare.com/2012/01/06/preemptive-vs-non-preemptive-and-multitasking-vs-multithreading/

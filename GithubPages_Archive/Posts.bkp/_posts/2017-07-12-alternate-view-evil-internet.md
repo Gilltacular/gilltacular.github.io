@@ -1,0 +1,28 @@
+---
+layout: post
+title: 'The Baleful, Maleficent, Woeful, Rotten, No Good Internet'
+date: '2017-07-07T14:20:00.001-08:00'
+author: Jonathan Gill
+tags:
+- technology
+---
+
+We typically herald the internet as a great boon to society, a historical breakthrough that has evolved nearly every aspect of our existence, but wholly focusing on only one aspect of a given innovation and ignoring other aspects of its adoption is not a healthy stance to take. It is in the spirit of this idea that I explore the oft ignored aspect of this incredible technological system we utilize every day; its potential for baleful effects.
+
+Though the internet stands unchallenged as perhaps the most powerful information collection resource in the history of the world, its widespread use and adoption has brought with it an extraordinary amount of problems yet to be overcome as well. The internet has become necessity for many and the speed of adoption oftentimes leaves little room for reflection on healthy habits and use. I propose that because of our lack of understanding and blind adoption of this powerful and great technology, the technological invention of the internet is doing more harm than good today.
+
+One widespread use of the internet can be found in social networking. Social networking has surpassed the realm of simply being classified as a growing trend and is now in line with the label of mass adoption and integration into our lives. According to Statista.com (2015) “The power of social networking is such that, the number of worldwide users is expected to reach some 2.5 billion by 2018”. Putting this number in perspective that correlates to about a third of the current population of the entire planet. With such an enormous rate of integration in such a short amount of time is it any wonder social maladies such as communication addiction are on the rise (Walther, 1999)? In fact, an article by Andrew Couts (2011) cites Dr. Larry D. Rosen’s findings that those “who are persistently logged on to Facebook are more often to show psychological disorders, like mania, paranoia, aggressive tendencies, antisocial behavior and increased alcohol use.” These results combined with the mounting occupation of social networking over our daily lives stand as example of why social networking is yet another area we should consume carefully and with moderation.
+
+The issues presented by the internet’s hold on our daily lives is not contained to simply social network overdependence though. The network of networks provides so much access to information it can be difficult to distinguish the truth and motive of messages amongst all the noise. One striking example of this can be found in the wake of the 2013 Boston bombings when communities online incorrectly identified one of the bombers. This information was picked up by media outlets who continued to propagate the misinformation globally to all those interested in the event (Vis, 2014). With the speed of information dissemination and the enormity of users with which the information is available to, it has become ever more important and difficult to vet information for quality and correctness before taking it as fact, a phenomenon that in many cases can lead to ill effects such as those apparent in the Boston misidentification. The more access we have the more impossible it becomes to guarantee any sureties in the data we consume.
+
+Any discussion about the internet is certain to include the many great and wonderful things that have been made possible since its inception. The fields of communication and business have undergone such a great shift in the amount of speed and quality of results that it is nearly impossible to ignore as you browse the day’s news. A vast majority of the headlines decry the failings and successes of industry giants as they compete to offer faster services, greater access, and ever more devices that utilize and provide access to this technology. The long term issues of this all or nothing blind acceptance and integration into our lives though is an ofttimes overlooked element of the puzzle and could be responsible for many of today’s most pressing concerns. We cannot hold the technology itself accountable though, as it is simply the process and means by which both great and terrible events can take place. Instead we should evaluate our use of the tech in everyday life and see where perhaps adoption have changed to addiction and use to misuse. Still, it stands to reason that because of our current infancy in knowledge about the long term effects of the widespread use and adoption, the technological invention of the internet is doing more harm than good today.
+
+References:
+
+Couts, A. (2011). Facebook May Cause Serious Mental Health Problems In Kids, Studies Show. Retrieved on 12/04/2015 from: http://www.digitaltrends.com/social-media/facebook-may-cause-serious-mental-health-problems-in-kids/
+
+Statistics and Facts About Social Networks. (2015). Retrieved on 12/04/2015 from: http://www.statista.com/topics/1164/social-networks/
+
+Vis, F. (2014). The Rapid Spread of Misinformation Online. Retrieved on 12/04/2015 from: http://www.huffingtonpost.com/farida-vis/the-rapid-spread-of-misinformation-online_b_4665678.html
+
+Walther, J. (1999). Communication Addiction Disorder: Concern Over Media, Behavior, and Effects. Retrieved on 12/04/2015 from: http://psychcentral.com/archives/walther_cad.pdf

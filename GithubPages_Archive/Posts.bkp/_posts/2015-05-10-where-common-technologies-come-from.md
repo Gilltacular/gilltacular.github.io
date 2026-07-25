@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Communications Satellite'
+date: '2015-05-10T11:12:00.001-07:00'
+author: Jonathan Gill
+tags:
+- history
+---
+
+I think that out of all of the technologies that derived from the television the one that made the biggest impact in the twentieth century is the communication satellite. These devices were first jettisoned into orbit around the earth in 1965; syncing with the Earth’s rotation to deliver signals anywhere on the globe. Previously, communication transmissions were restricted to eighty two channels by the FCC, seventy UHF (ultra high frequency) and twelve VHF (very high frequency), in order to avoid interference. Since satellite transmissions were directed up instead of out they were able to communicate without interference with this established network and therefore were not restricted by those channels.
+
+The advent and implementation of the communications satellite eased the financial burden on early cable companies who were paying hefty fees to ATT for use of their lines at the time. This endeavor also allowed cable companies to stop only thinking on a local level and start thinking of expanding to a national and international level. The cuts in cost and boon in users allowed for more variety in programming as well. Some programs that would not usually be worth showcasing due to limited interest were given spots such as cartoon channels, informative channels for education as well as religious, shopping, movies and music channels. News and opinions could be broadcasts to anywhere on the globe in an instant and as Cowan (1997) states, “as a result, cable television exercised a powerful, decentralizing force, creating new means by which independent points of view could be heard”. The twentieth century technology of the communications satellite in many ways continued the work of the technologies that came before it. Such works as the telegraph and the trans-atlantic cable provided means for which opinions, news, and orders could be given around the world; unifying Earth across great divides of ocean, mountains and distance. This technological advancement has since expanded to such things as internet access, satellite imagery, and cell phone communications, making it one of the most influential pieces of technology within the mid twentieth century.
+
+References:
+
+Cowan, S. R. (1997). A Social History of American Technology. New York, NY: Oxford University Press

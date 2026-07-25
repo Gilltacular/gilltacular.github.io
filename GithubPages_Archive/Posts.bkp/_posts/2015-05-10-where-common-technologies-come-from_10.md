@@ -1,0 +1,35 @@
+---
+layout: post
+title: 'Grey, Kampfe, and Booth'
+date: '2015-05-10T13:23:00.001-07:00'
+author: Jonathan Gill
+tags:
+- history
+---
+
+Three great innovators of their time provide the perfect showcase for this installment of Where Common Technologies Come From. In this post we look at the place in history occupied by Elisha Grey, the Kampfe brothers, and Hubert Cecil Booth; three great men who had a profound impact on the products we still use today.
+
+Elisha Grey was an electrical engineer who developed variable resistance telephone prototype and co-founder of the Western Electric Manufacturing company. In February of 1876 Grey filed a caveat for his invention which he described as able to “transmit the tones of the human voice through a telegraphic circuit, and reproduce them at the receiving end of the line, so that actual conversations can be carried on by persons at long distances apart”. This worked by vibrating steel reeds which were tuned to specific frequencies and interrupted the current on one end of the line. On the opposite end, the current passed through electromagnets and vibrated tuned steel reeds that matched the other end to produce like sound. This ‘harmonic telegraph’, as it was called, was used by the Western Union Telegraph company and was capable of handling several messages through the same line at the same time. Interesting enough the patent caveat for this device was filed the same day that Alexander Graham Bell’s lawyer filed his patent application for the telephone. Bell and Grey knew each other and both had very similar versions of the ‘water transmitter’ in their applications. These seemingly ‘too coincidental to be coincidence’ facts lead many to believe that Bell’s lawyers may have somehow gained an unfair advantage over Grey.
+
+Antonio Meucci, like Grey developed a telephone prototype. His work on the telephone started in the 1830’s and continued on well into the 1870’s. To solve the problem of communication between his him and his wife, due to her being paralyzed, he made a system that linked her bedroom with his workshop. Meucci unfortunately was not a wealthy man and lacked the financial backing to do anything with his idea. These first round of telephone like devices came to an abrupt redesign when his wife sold the machines to a secondhand shop. This was the catalyst that led Meucci to start becoming more complex in his designs and models. He created a technique described by Rory Carroll (2002) as, “An inductor formed around an iron core in the shape of a cylinder was a technique so sophisticated that it was used decades later for long-distance connections”. Unfortunately, Meucci was unable to afford the money to renew his patents and was superseded by Bell’s telephone 1876 telephone patent altogether. Although he fought the case in court, Meucci died before any definitive legal resolution could be given.
+
+The Kampfe brothers were three Frederick Kampfe, Richard, Kampfe and Otto Kampfe. Being the ones to create and patent a new take on an old device called the safety razor. The Kampfe brothers started manufacturing these safety razors in 1875, in a one room shop in New York. Though they improved on the design of the razor they utilized many ideas from previous designs and other inventors like the hoe-type razor with a wedge shaped blade held in by metal clips designed by William Samuel Henson. Overall the Kampfe brothers acquired over fifty different patents on designs for razors and stropping devices and inspired such big names as Gillette who is accredited as the creator of the first razor with a disposable blade.
+
+Hubert Cecil Booth was a British engineer who created the ‘Puffing Billy’ in 1901; a machine that led to the invention of the vacuum cleaner. According to the British Vacuum Cleaner & Engineering company (“The Story of the Vacuum Cleaner”, 1960):
+>"The idea originated from a visit by Mr. Booth to a theatre in the year 1901 to investigate a new machine which blew the dust from the carpet by means of compressed air. 'Now' thought Mr. Booth, 'if this system could be reversed, and a filter inserted between the suction apparatus and the outside air, whereby the dust would be retained in a receptacle, the real solution of the hygienic removal of dust would be obtained.'" (para. 2)
+
+Shortly after it’s debut, Booth became a busy man, dispatching fifteen machines over four weeks to vacuum up about twenty six tonnes of dust altogether. He worked for such establishments as the Crystal Palace. It was not until 1907 that the more commonly known William Henry Hoover produced the more recognizable ‘bag on a stick’ upright vacuum cleaner.
+
+While all these innovations are certainly worthy ideas, the common theme within them all is that they were all started by one man and improved upon by others. Where Grey and Meucci laid the groundwork, Bell solidified the ideas and beat them to the patent office. Likewise, the Kampfe brothers and Hubert Booth both created a unique idea but were ultimately superseded by inventors who made slight changes to their design and marketing that has given them renown and fortune lasting even till present day.
+
+References:
+
+Meyer, R. O. (2008). Did Alexander Graham Bell Steal the Telephone Patent? American Heritage Magazine volume 58 (issue 4). Retrieved from: http://www.americanheritage.com/content/did-alexander-graham-bell-steal-telephone-patent
+
+Reeves, A. (2005). Elisha Gray Kept Innovation on the Front Burner Never Give Up: Hours too late to patent the phone, his determination led to the development of the early fax machine. Investor’s Business Daily Retrieved from: http://search.proquest.com/docview/1033215530?accountid=38189
+
+Carroll, R. (2002). Bell did not invent the telephone, US rules: Scot accused of finding fame by stealing Italian’s ideas. Retrieved from: http://www.theguardian.com/world/2002/jun/17/humanities.internationaleducationnews
+
+Waits, R. K. (2007). From Perret to Kampfe: Origins of the Safety Razor. Retrieved from: http://www.shaveworld.org/home/images/PerrettKampfe-rev2.html
+
+The British Vacuum Cleaner & Engineering Co. (1960). The Story of the Vacuum Cleaner. Retrieved from: http://www.bvc.co.uk/history.html
