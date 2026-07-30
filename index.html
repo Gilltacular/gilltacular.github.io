@@ -15,9 +15,9 @@
     <!-- Styles -->
     <style>
         :root {
-            --primary: #4a90e2;          /* Changed: Calmer blue instead of aggressive purple */
-            --secondary: #2c3e50;        /* Changed: Dark navy instead of black */
-            --accent: #27ae60;           /* Changed: Fresh green accent */
+            --primary: #4a90e2;
+            --secondary: #2c3e50;
+            --accent: #27ae60;
             --dark: #2c3e50;
             --light: #ffffff;
             --gray: #7f8c8d;
@@ -33,7 +33,7 @@
             line-height: 1.8;
             color: var(--dark);
             background: var(--light);
-            padding-top: 60px; /* Account for fixed nav */
+            padding-top: 60px;
         }
         
         /* Navigation */
@@ -108,11 +108,13 @@
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
         
         .btn-primary {
             background: var(--primary);
             color: white;
+            border: none;
         }
         
         .btn-secondary {
@@ -236,34 +238,6 @@
             color: var(--dark);
         }
         
-        /* Resume Section */
-        .resume-section {
-            padding: 5rem 2rem;
-            background: var(--bg-light);
-        }
-        
-        .resume-container {
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .resume-section h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: var(--dark);
-        }
-        
-        .resume-embed {
-            width: 100%;
-            height: 700px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            background: white;
-        }
-        
         /* Contact */
         .contact {
             text-align: center;
@@ -278,6 +252,13 @@
             margin-bottom: 1.5rem;
         }
         
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
         .social-link {
             display: inline-flex;
             align-items: center;
@@ -287,18 +268,81 @@
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             color: white;
-            font-size: 1.5rem; /* Icon size */
+            font-size: 1.5rem;
             text-decoration: none;
             transition: background 0.3s, transform 0.3s;
         }
-
+        
         .social-link i {
-            font-size: 1.5rem; /* Ensure icon renders at proper size */
+            font-size: 1.5rem;
         }
-
+        
         .social-link:hover {
             background: var(--primary);
             transform: scale(1.1);
+        }
+        
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .modal-header h2 {
+            color: var(--primary);
+            margin: 0;
+        }
+        
+        .modal-close {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+        
+        .modal-close:hover {
+            color: var(--primary);
+        }
+        
+        .modal-content iframe {
+            width: 100%;
+            height: 70vh;
+            border: none;
+            flex-grow: 1;
+        }
+        
+        .modal-footer {
+            padding: 1rem 2rem;
+            border-top: 2px solid #eee;
+            text-align: center;
         }
         
         /* Animations */
@@ -341,14 +385,14 @@
             }
             
             body {
-                padding-top: 0; /* Remove padding on mobile, use relative nav */
+                padding-top: 0;
             }
             
             nav {
                 position: relative;
             }
             
-            .projects-section, .resume-section, .contact {
+            .projects-section, .contact, .modal-content {
                 padding: 3rem 1rem;
             }
         }
@@ -361,7 +405,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#philosophy">Philosophy</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
+            <li><a href="#" onclick="openResumeModal()">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -373,7 +417,7 @@
             <p>Software Developer • Automation Specialist • Security-Conscious Engineer</p>
             <div class="hero-btns">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="resume.html" class="btn btn-secondary">View Resume</a>
+                <button onclick="openResumeModal()" class="btn btn-secondary">View Resume</button>
                 <a href="https://github.com/Gilltacular" target="_blank" class="btn btn-secondary">GitHub</a>
             </div>
         </div>
@@ -382,7 +426,6 @@
     <!-- About Section -->
     <section id="about" class="spotlight-section">
         <div class="spotlight-image">
-            <!-- Placeholder until you upload actual image -->
             <div class="placeholder-image">Profile Photo</div>
         </div>
         <div class="spotlight-content">
@@ -414,18 +457,6 @@
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume-section">
-        <h2>Resume</h2>
-        <div class="resume-container">
-            <!-- FIXED: Resume embed path -->
-            <iframe id="resume-frame" class="resume-embed" src="assets/resumes/jon-gill-resume.pdf" frameborder="0"></iframe>
-            <p style="margin-top: 1rem;">
-                <a href="assets/resumes/jon-gill-resume.pdf" id="download-resume" class="btn btn-primary" download>Download PDF Version</a>
-            </p>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Get In Touch</h2>
@@ -433,7 +464,6 @@
             I'm actively seeking entry-level software development, automation, or robotics roles in the Houston metropolitan area.
         </p>
         <div class="social-links">
-            <!-- FIXED: Font Awesome icons -->
             <a href="mailto:jonpgill@protonmail.com" class="social-link" title="Email">
                 <i class="fas fa-envelope"></i>
             </a>
@@ -446,6 +476,20 @@
         </div>
         <p style="margin-top: 2rem; opacity: 0.9;">The Woodlands, TX • Open to Relocation</p>
     </section>
+
+    <!-- Resume Modal Overlay -->
+    <div id="resume-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Resume</h2>
+                <span class="modal-close" onclick="closeResumeModal()">&times;</span>
+            </div>
+            <iframe id="resume-modal-frame" src="assets/resumes/jon-gill-resume.pdf" frameborder="0"></iframe>
+            <div class="modal-footer">
+                <a href="assets/resumes/jon-gill-resume.pdf" download class="btn btn-primary">Download PDF</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -488,6 +532,32 @@
             }
         }
         
+        // Resume Modal Functions
+        function openResumeModal() {
+            document.getElementById('resume-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeResumeModal() {
+            document.getElementById('resume-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside content
+        document.getElementById('resume-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeResumeModal();
+            }
+        });
+        
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeResumeModal();
+            }
+        });
+        
+        // Initialize
         loadGitHubProjects();
         
         // Smooth scroll
