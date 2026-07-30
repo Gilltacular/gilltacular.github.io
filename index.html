@@ -12,20 +12,25 @@
     <!-- Styles -->
     <style>
         :root {
-            --primary: #6d4aff;
-            --secondary: #ff6b4a;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
-            --gray: #6c757d;
+            --primary: #4a90e2;          /* Changed: Calmer blue instead of aggressive purple */
+            --secondary: #2c3e50;        /* Changed: Dark navy instead of black */
+            --accent: #27ae60;           /* Changed: Fresh green accent */
+            --dark: #2c3e50;
+            --light: #ffffff;
+            --gray: #7f8c8d;
+            --bg-light: #ecf0f1;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
         
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.8;
             color: var(--dark);
             background: var(--light);
+            padding-top: 60px; /* Account for fixed nav */
         }
         
         /* Navigation */
@@ -33,7 +38,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -46,12 +51,13 @@
             padding: 1rem 2rem;
         }
         
-        nav li { margin: 0 1.5rem; }
+        nav li { margin: 0 1rem; }
         
         nav a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
         
@@ -60,10 +66,11 @@
         /* Hero Section */
         .hero {
             height: 80vh;
+            min-height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--dark) 0%, #2a2a4e 100%);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
             color: white;
             padding: 2rem;
         }
@@ -74,14 +81,14 @@
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             animation: fadeInUp 0.8s ease-out;
         }
         
         .hero p {
-            font-size: 1.5rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            opacity: 0.95;
             margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
@@ -92,7 +99,7 @@
         
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.8rem;
             margin: 0.5rem;
             border-radius: 50px;
             text-decoration: none;
@@ -116,29 +123,46 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         
-        /* Spotlight Sections (from your old site) */
+        /* Spotlight Sections */
         .spotlight-section {
             display: flex;
             align-items: center;
             gap: 4rem;
-            padding: 6rem 2rem;
-            max-width: 1400px;
+            padding: 5rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
         .spotlight-section:nth-child(even) {
             flex-direction: row-reverse;
-            background: white;
+            background: var(--bg-light);
         }
         
         .spotlight-image {
             flex: 0 0 45%;
+            min-height: 250px;
+            background: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
         }
         
         .spotlight-image img {
             width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .placeholder-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
         }
         
         .spotlight-content {
@@ -146,26 +170,26 @@
         }
         
         .spotlight-content h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
         
         .spotlight-content p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             margin-bottom: 1.5rem;
             text-align: justify;
         }
         
         /* Projects Grid */
         .projects-section {
-            padding: 6rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
         
         .projects-section h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 3rem;
             text-align: center;
             color: var(--dark);
@@ -173,7 +197,7 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
         
@@ -202,16 +226,17 @@
         }
         
         .tech-tag {
-            background: var(--light);
+            background: var(--bg-light);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.85rem;
+            color: var(--dark);
         }
         
         /* Resume Section */
         .resume-section {
-            padding: 6rem 2rem;
-            background: white;
+            padding: 5rem 2rem;
+            background: var(--bg-light);
         }
         
         .resume-container {
@@ -221,7 +246,7 @@
         }
         
         .resume-section h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 2rem;
             text-align: center;
             color: var(--dark);
@@ -229,24 +254,25 @@
         
         .resume-embed {
             width: 100%;
-            height: 800px;
+            height: 700px;
             border: none;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: white;
         }
         
         /* Contact */
         .contact {
             text-align: center;
-            padding: 6rem 2rem;
-            background: var(--dark);
+            padding: 5rem 2rem;
+            background: var(--secondary);
             color: white;
             max-width: 100%;
         }
         
         .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .social-links {
@@ -256,13 +282,24 @@
             margin-top: 2rem;
         }
         
-        .social-links a {
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
             color: white;
-            font-size: 2rem;
-            transition: color 0.3s;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
         }
         
-        .social-links a:hover { color: var(--primary); }
+        .social-link:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
         
         /* Animations */
         @keyframes fadeInUp {
@@ -277,13 +314,43 @@
         }
         
         /* Responsive */
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
-            .spotlight-section { flex-direction: column !important; gap: 2rem; }
-            .spotlight-image, .spotlight-content { flex: 0 0 100%; }
-            nav ul { flex-direction: column; text-align: center; }
-            nav li { margin: 0.5rem 0; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                padding: 0.5rem;
+            }
+            
+            nav li { margin: 0.3rem 0; }
+            
+            .spotlight-section {
+                flex-direction: column !important;
+                gap: 2rem;
+                padding: 3rem 1rem;
+            }
+            
+            .spotlight-image, .spotlight-content {
+                flex: 0 0 100%;
+            }
+            
+            .spotlight-image {
+                min-height: 200px;
+            }
+            
+            body {
+                padding-top: 0; /* Remove padding on mobile, use relative nav */
+            }
+            
+            nav {
+                position: relative;
+            }
+            
+            .projects-section, .resume-section, .contact {
+                padding: 3rem 1rem;
+            }
         }
     </style>
 </head>
@@ -306,92 +373,38 @@
             <p>Software Developer • Automation Specialist • Security-Conscious Engineer</p>
             <div class="hero-btns">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#resume" class="btn btn-secondary">Download Resume</a>
-                <a href="assets/resumes/jon-gill-resume.pdf" class="btn btn-secondary" download>Download PDF</a>
+                <a href="resume.html" class="btn btn-secondary">View Resume</a>
+                <a href="https://github.com/Gilltacular" target="_blank" class="btn btn-secondary">GitHub</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section (Spotlight Layout from Old Site) -->
+    <!-- About Section -->
     <section id="about" class="spotlight-section">
         <div class="spotlight-image">
-            <img src="assets/images/index/jpgill_avatar.jpg" alt="Jon Gill Avatar">
+            <!-- Placeholder until you upload actual image -->
+            <div class="placeholder-image">Profile Photo</div>
         </div>
         <div class="spotlight-content">
             <h2>Professional Background</h2>
-            <p>
-                Graduated summa cum laude with a Bachelor of Science in Computer Science (University of Advancing Technology, 2017), I combine rigorous academic training with six years of real-world investigative experience as an Alaska Department of Public Safety Investigator and five years in IT support at Geek Squad. This uncommon trajectory has shaped my approach to technology: attention to detail, crisis management under pressure, and understanding both the technical AND human sides of systems.
-            </p>
-            <p>
-                I hold Texas Journeyman Electrician Apprentice certification and have recently focused on software development, robotics, and industrial automation. My portfolio includes security-hardened web applications, database-driven tools, and PLC ladder logic projects demonstrating my commitment to bridging physical and digital infrastructure.
-            </p>
-            <div style="margin-top: 2rem;">
-                <h3 style="margin-bottom: 1rem;">Technical Skills</h3>
-                <div class="tech-stack" style="justify-content: flex-start;">
-                    <span class="tech-tag">PHP</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">PLC Ladder Logic</span>
-                    <span class="tech-tag">Linux Administration</span>
-                    <span class="tech-tag">Security Hardening</span>
-                    <span class="tech-tag">Database Design</span>
-                    <span class="tech-tag">REST APIs</span>
-                    <span class="tech-tag">Git Version Control</span>
-                </div>
-            </div>
+            <p>Graduated summa cum laude with a Bachelor of Science in Computer Science (University of Advancing Technology, 2017), I combine rigorous academic training with six years of real-world investigative experience as an Alaska Department of Public Safety Investigator and five years in IT support at Geek Squad. This uncommon trajectory has shaped my approach to technology: attention to detail, crisis management under pressure, and understanding both the technical AND human sides of systems.</p>
+            <p>I hold Texas Journeyman Electrician Apprentice certification and have recently focused on software development, robotics, and industrial automation. My portfolio includes security-hardened web applications, database-driven tools, and PLC ladder logic projects demonstrating my commitment to bridging physical and digital infrastructure.</p>
         </div>
     </section>
 
-    <!-- Philosophy Section (Preserving Old Site Tone) -->
+    <!-- Philosophy Section -->
     <section id="philosophy" class="spotlight-section">
         <div class="spotlight-image">
-            <img src="assets/images/index/discoveryWoods.jpg" alt="Technology and Nature">
+            <div class="placeholder-image">Technology & Nature</div>
         </div>
         <div class="spotlight-content">
             <h2>Technological Philosophy</h2>
-            <p>
-                Humanity's greatest responsibility is one of progressing our technological power with balance. As we continue to grow, we must take care to utilize our intelligence and innovation in ways that are conscious of their effects on the environments we serve—whether that environment is a manufacturing floor, a healthcare system, or a community network.
-            </p>
-            <p>
-                I believe in personal accountability through code quality, systematic testing, and security-first design principles. Just as "fiat justitia ruat caelum"—let justice be done though the heavens fall—I approach development with unwavering standards for correctness, even when it demands difficult refactoring or extended debugging time. Technology serves society; it must be built with integrity.
-            </p>
+            <p>Humanity's greatest responsibility is one of progressing our technological power with balance. As we continue to grow, we must take care to utilize our intelligence and innovation in ways that are conscious of their effects on the environments we serve—whether that environment is a manufacturing floor, a healthcare system, or a community network.</p>
+            <p>I believe in personal accountability through code quality, systematic testing, and security-first design principles. Just as "fiat justitia ruat caelum"—let justice be done though the heavens fall—I approach development with unwavering standards for correctness, even when it demands difficult refactoring or extended debugging time.</p>
         </div>
     </section>
 
-    <!-- Learning Methodology Section -->
-    <section class="spotlight-section">
-        <div class="spotlight-image">
-            <img src="assets/images/index/ConflictResolution.jpg" alt="Problem Solving">
-        </div>
-        <div class="spotlight-content">
-            <h2>Epistemological Perspective</h2>
-            <p>
-                Jerome Bruner stated, "The most personal of what a person knows is that which he has discovered for himself." My learning style emphasizes understanding through process, not memorization of discrete facts. This discovery-based approach provides a solid foundation for building upon as subject complexity and my understanding grow, reducing the chance to lose the forest for the trees.
-            </p>
-            <p>
-                In software development, this manifests as deep engagement with source code, documentation, and debugging rather than reliance on copy-paste solutions. I am both observant and analytical, applying knowledge visually and tactically—whether through wireframe prototyping, database schema design, or hands-on electrical integration—to achieve tangible implementation.
-            </p>
-        </div>
-    </section>
-
-    <!-- Problem-Solving Section -->
-    <section class="spotlight-section">
-        <div class="spotlight-image">
-            <img src="assets/images/index/ConflictResolution.jpg" alt="Systematic Thinking">
-        </div>
-        <div class="spotlight-content">
-            <h2>Systematic Problem-Solving Strategy</h2>
-            <p>
-                I value systematic analysis as an opportunity to uncover underlying architectures or inefficiencies that may undermine system reliability. Through methodical investigation, requirements are clarified, hypotheses are proven or disproven, and robust solutions emerge from the tension of constraints and capabilities.
-            </p>
-            <p>
-                My background in law enforcement investigation honed the skill to ascertain intrinsic and extrinsic motivations—translated to software development, this means understanding stakeholder needs, business logic, and user behaviors before writing code. I maintain control of project scope, communicate consciously about trade-offs, and build rapport through respect for the challenges inherent in complex technical systems.
-            </p>
-        </div>
-    </section>
-
-    <!-- Projects Section (Dynamic GitHub API) -->
+    <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <h2>Featured Projects</h2>
         <div class="projects-grid" id="projects-container">
@@ -405,6 +418,7 @@
     <section id="resume" class="resume-section">
         <h2>Resume</h2>
         <div class="resume-container">
+            <!-- FIXED: Resume embed path -->
             <iframe id="resume-frame" class="resume-embed" src="assets/resumes/jon-gill-resume.pdf" frameborder="0"></iframe>
             <p style="margin-top: 1rem;">
                 <a href="assets/resumes/jon-gill-resume.pdf" id="download-resume" class="btn btn-primary" download>Download PDF Version</a>
@@ -415,20 +429,21 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Get In Touch</h2>
-        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
-            I'm actively seeking entry-level software development, automation, or robotics roles in the Houston metropolitan area. My diverse background in investigation, IT support, and hands-on electrical work positions me to contribute immediately to teams requiring attention to detail, security-conscious development, and cross-domain technical fluency.
+        <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+            I'm actively seeking entry-level software development, automation, or robotics roles in the Houston metropolitan area.
         </p>
         <div class="social-links">
-            <a href="mailto:jonpgill@protonmail.com" title="Email">✉️</a>
-            <a href="https://linkedin.com/in/jonpgill" target="_blank" title="LinkedIn">💼</a>
-            <a href="https://github.com/Gilltacular" target="_blank" title="GitHub">🐙</a>
+            <!-- FIXED: Working social icons -->
+            <a href="mailto:jonpgill@protonmail.com" class="social-link" title="Email">📧</a>
+            <a href="https://linkedin.com/in/jonpgill" target="_blank" class="social-link" title="LinkedIn">💼</a>
+            <a href="https://github.com/Gilltacular" target="_blank" class="social-link" title="GitHub">🐙</a>
         </div>
-        <p style="margin-top: 2rem; opacity: 0.8;">The Woodlands, TX • Open to Relocation</p>
+        <p style="margin-top: 2rem; opacity: 0.9;">The Woodlands, TX • Open to Relocation</p>
     </section>
 
     <!-- Scripts -->
     <script>
-        // GitHub API Integration - Load Repositories
+        // GitHub API Integration
         const githubUsername = 'Gilltacular';
         const projectsContainer = document.getElementById('projects-container');
         
@@ -442,7 +457,6 @@
                     return;
                 }
                 
-                // Filter for your key projects
                 const featuredRepos = repos.filter(repo => 
                     !repo.fork && (repo.name.toLowerCase().includes('picture') || 
                                    repo.name.toLowerCase().includes('heroes') || 
@@ -459,7 +473,6 @@
                         <div class="tech-stack">
                             ${repo.language ? `<span class="tech-tag">${repo.language}</span>` : ''}
                             ${repo.stargazers_count > 0 ? `<span class="tech-tag">⭐ ${repo.stargazers_count}</span>` : ''}
-                            ${repo.forks_count > 0 ? `<span class="tech-tag">🍴 ${repo.forks_count}</span>` : ''}
                         </div>
                         <a href="${repo.html_url}" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">View Code</a>
                     </div>
@@ -469,7 +482,6 @@
             }
         }
         
-        // Initialize
         loadGitHubProjects();
         
         // Smooth scroll
