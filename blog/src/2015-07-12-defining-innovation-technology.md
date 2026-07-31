@@ -1,0 +1,32 @@
+---
+layout: post
+title: 'Defining Innovation and Technology'
+date: '2015-07-12T21:40:00.000-07:00'
+author: Jonathan Gill
+tags:
+- technology
+---
+
+For me personally, the best way to understand something is to find a definition that is descriptive and break it down into its parts to see what makes up the definition as a whole. Through this process I find that I better understand what makes up the meaning of something and get a better line of sight on why it is defined the way it is. With that in mind I took to the internet to try and get an idea of what exactly the words innovation and technology mean.
+
+The definition of technology according to Merriam-Webster.com (n.d.) is, “the practical application of knowledge especially in a particular area”. I was at first surprised by this definition as it seemed much more general than I had originally expected. It did not include anything specific to entice the image of gadgetry and mechanical wonder that I would normally associate the word with. The more I thought on the definition, the further I came to realize that this is actually a perfectly fitting description that hit on a broader context than that of our modern colloquial understanding of the word. Rephrased, this definition describes that a technology is the end product of our research into a particular field of study. So, for example, we can say that the modern technology of the computer came about by our research and understanding into mathematics and electricity.
+
+The word innovation on the other hand is described as “the introduction of something new” according to Merriam-Webster (n.d.). Further research brought me to the definition as outlined by the website businessdictionary.com which expands upon the Webster understanding of the word with the following addition:
+
+> “Innovation involves deliberate application of information, imagination and initiative in deriving greater or different values from resources, and includes all processes by which new ideas are generated and converted into useful products.” (n.d.)
+
+What this tells us is that innovation must be something new that applies the deliberate application of information; that of technology. It further describes that an innovation is not limited to a singular item but instead offers that it can encompass ideas, processes, and increases to efficiency; the end result of which are products of use. For example, if we were to define a processor as a technology, we could then say that an innovation on this technology is the improvement of multi-core architecture in processor design.
+
+Under this new understanding I would say that technology is the product that is the culmination of prior work and research in an area of study while an innovation is a new way in which a technology is improved. Both definitions support the other in a way that suggests that one may lead to the other; a pairing that has given credence to research and provided the stepping stones to future advances as far back as we can track human history.
+
+One such stepping stone of innovative technology is the ordnance survey in which mathematical principles of triangulation were combined with ancient work in cartography. Another great example of a technological innovation is the transatlantic cable an amazing feat of perseverance and vision that connected two continents with communication with little more than steel and oceanic travel. Another, and the last of my favorite innovations in technology, is one more recent and obvious to our modern world; the computer. This extraordinary machine physically was little more than electricity and mechanical parts, but in practice the computer transcended the boundary of electrical engineering products of the time, allowing for logic and mathematics to be put to use in increasingly more complex ways and shaping the information age we experience today.
+
+There is no doubt that innovation has brought about the advent of some incredible and wonderous technologies throughout our history. The future flies on the wings of innovation and humanity has so much further to go.
+
+References:
+
+Innovation. (n.d.). In BusinessDictionary.com. Retrieved from: http://www.businessdictionary.com/definition/innovation.html
+
+Innovation. (n.d.). In Merriam-Webster online. Retrieved from: http://www.merriam-webster.com/dictionary/innovation
+
+Technology. (n.d.). In Merriam-Webster online. Retrieved from: http://www.merriam-webster.com/dictionary/technology
