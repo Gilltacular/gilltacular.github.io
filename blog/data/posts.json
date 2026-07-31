@@ -1,0 +1,512 @@
+[
+  {
+    "slug": "the-credit-card-system",
+    "title": "The Credit Card System",
+    "date": "2018-01-18",
+    "tags": [
+      "analysis",
+      "discussion",
+      "history"
+    ],
+    "readingTime": 9,
+    "thumbnail": "assets/thumbnails/the-credit-card-system.jpg",
+    "featured": false
+  },
+  {
+    "slug": "permanency-versus-privacy",
+    "title": "Permanency Versus Privacy",
+    "date": "2017-07-07",
+    "tags": [
+      "security"
+    ],
+    "readingTime": 4,
+    "thumbnail": "assets/thumbnails/permanency-versus-privacy.jpg",
+    "featured": false
+  },
+  {
+    "slug": "the-baleful-maleficent-woeful-rotten-no-good-internet",
+    "title": "The Baleful, Maleficent, Woeful, Rotten, No Good Internet",
+    "date": "2017-07-07",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 4,
+    "thumbnail": "assets/thumbnails/the-baleful-maleficent-woeful-rotten-no-good-internet.jpg",
+    "featured": false
+  },
+  {
+    "slug": "requirements-of-memory-management",
+    "title": "Requirements of Memory Management",
+    "date": "2017-05-11",
+    "tags": [
+      "computer science",
+      "os theory"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/requirements-of-memory-management.jpg",
+    "featured": false
+  },
+  {
+    "slug": "the-how-and-why-of-sequential-files",
+    "title": "The How and Why of Sequential Files",
+    "date": "2017-04-20",
+    "tags": [
+      "computer science",
+      "c++"
+    ],
+    "readingTime": 4,
+    "thumbnail": "assets/thumbnails/the-how-and-why-of-sequential-files.jpg",
+    "featured": false
+  },
+  {
+    "slug": "searching-versus-sorting",
+    "title": "Searching Versus Sorting",
+    "date": "2017-04-06",
+    "tags": [
+      "computer science"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/searching-versus-sorting.jpg",
+    "featured": false
+  },
+  {
+    "slug": "internet-censorship",
+    "title": "Internet Censorship",
+    "date": "2017-03-28",
+    "tags": [
+      "security"
+    ],
+    "readingTime": 5,
+    "thumbnail": "assets/thumbnails/internet-censorship.jpg",
+    "featured": false
+  },
+  {
+    "slug": "is-technology-a-blessing-or-curse",
+    "title": "Is Technology a Blessing or Curse?",
+    "date": "2017-03-16",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 1,
+    "thumbnail": "assets/thumbnails/is-technology-a-blessing-or-curse.jpg",
+    "featured": false
+  },
+  {
+    "slug": "considerations-when-choosing-a-file-organization",
+    "title": "Considerations When Choosing a File Organization",
+    "date": "2017-03-14",
+    "tags": [
+      "computer science",
+      "os theory"
+    ],
+    "readingTime": 4,
+    "thumbnail": "assets/thumbnails/considerations-when-choosing-a-file-organization.jpg",
+    "featured": false
+  },
+  {
+    "slug": "internet-as-a-human-right",
+    "title": "Internet as a Human Right",
+    "date": "2017-03-14",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/internet-as-a-human-right.jpg",
+    "featured": false
+  },
+  {
+    "slug": "the-differences-between-stacks-and-queues",
+    "title": "The Differences between Stacks and Queues",
+    "date": "2017-03-14",
+    "tags": [
+      "computer science",
+      "data structures"
+    ],
+    "readingTime": 1,
+    "thumbnail": "assets/thumbnails/the-differences-between-stacks-and-queues.jpg",
+    "featured": false
+  },
+  {
+    "slug": "workplace-privacy-should-it-exist",
+    "title": "Workplace Privacy? Should it exist?",
+    "date": "2017-03-03",
+    "tags": [
+      "security"
+    ],
+    "readingTime": 4,
+    "thumbnail": "assets/thumbnails/workplace-privacy-should-it-exist.jpg",
+    "featured": false
+  },
+  {
+    "slug": "future-of-technology",
+    "title": "Future of Technology",
+    "date": "2017-02-18",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/future-of-technology.jpg",
+    "featured": false
+  },
+  {
+    "slug": "four-phases-of-project-management",
+    "title": "Four Phases of Project Management",
+    "date": "2017-02-17",
+    "tags": [
+      "project management",
+      "software engineering"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/four-phases-of-project-management.jpg",
+    "featured": false
+  },
+  {
+    "slug": "qa-vs-qc-vs-tqm",
+    "title": "QA VS QC VS TQM",
+    "date": "2017-02-17",
+    "tags": [
+      "software engineering"
+    ],
+    "readingTime": 1,
+    "thumbnail": "assets/thumbnails/qa-vs-qc-vs-tqm.jpg",
+    "featured": false
+  },
+  {
+    "slug": "modern-magic",
+    "title": "Modern Magic",
+    "date": "2016-11-08",
+    "tags": [
+      "writing"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/modern-magic.jpg",
+    "featured": false
+  },
+  {
+    "slug": "the-tree-trie-and-dancing-tree",
+    "title": "The Tree, Trie, and Dancing Tree",
+    "date": "2015-12-07",
+    "tags": [
+      "computer science",
+      "data structures"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/the-tree-trie-and-dancing-tree.jpg",
+    "featured": false
+  },
+  {
+    "slug": "technology-and-science",
+    "title": "Technology and Science",
+    "date": "2015-12-07",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 6,
+    "thumbnail": "assets/thumbnails/technology-and-science.jpg",
+    "featured": false
+  },
+  {
+    "slug": "the-infamous-deadlock",
+    "title": "The Infamous Deadlock",
+    "date": "2015-10-14",
+    "tags": [
+      "computer science",
+      "os theory"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/the-infamous-deadlock.jpg",
+    "featured": false
+  },
+  {
+    "slug": "what-is-a-linked-list",
+    "title": "What is a Linked List?",
+    "date": "2015-10-06",
+    "tags": [
+      "computer science",
+      "data structures"
+    ],
+    "readingTime": 6,
+    "thumbnail": "assets/thumbnails/what-is-a-linked-list.jpg",
+    "featured": false
+  },
+  {
+    "slug": "what-are-agile-processes",
+    "title": "What are Agile Processes?",
+    "date": "2015-10-02",
+    "tags": [
+      "software engineering"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/what-are-agile-processes.jpg",
+    "featured": false
+  },
+  {
+    "slug": "how-do-operating-systems-handle-multiple-interrupts",
+    "title": "How do operating systems handle multiple interrupts?",
+    "date": "2015-09-02",
+    "tags": [
+      "computer science",
+      "os theory"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/how-do-operating-systems-handle-multiple-interrupts.jpg",
+    "featured": false
+  },
+  {
+    "slug": "what-is-process-preemption",
+    "title": "What is Process Preemption?",
+    "date": "2015-09-02",
+    "tags": [
+      "computer science",
+      "education",
+      "os theory"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/what-is-process-preemption.jpg",
+    "featured": false
+  },
+  {
+    "slug": "hashing-versus-bst",
+    "title": "Hashing Versus BST",
+    "date": "2015-09-02",
+    "tags": [
+      "computer science",
+      "data structures"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/hashing-versus-bst.jpg",
+    "featured": false
+  },
+  {
+    "slug": "quick-sort-vs-merge-sort",
+    "title": "Quick Sort VS. Merge Sort",
+    "date": "2015-09-02",
+    "tags": [
+      "computer science",
+      "os theory"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/quick-sort-vs-merge-sort.jpg",
+    "featured": false
+  },
+  {
+    "slug": "what-is-concurrency",
+    "title": "What is Concurrency?",
+    "date": "2015-08-04",
+    "tags": [
+      "computer science"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/what-is-concurrency.jpg",
+    "featured": false
+  },
+  {
+    "slug": "defining-innovation-and-technology",
+    "title": "Defining Innovation and Technology",
+    "date": "2015-07-12",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/defining-innovation-and-technology.jpg",
+    "featured": false
+  },
+  {
+    "slug": "advertising-effects",
+    "title": "Advertising Effects",
+    "date": "2015-07-12",
+    "tags": [
+      "psychology"
+    ],
+    "readingTime": 14,
+    "thumbnail": "assets/thumbnails/advertising-effects.jpg",
+    "featured": false
+  },
+  {
+    "slug": "the-computer",
+    "title": "The Computer",
+    "date": "2015-05-11",
+    "tags": [
+      "history"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/the-computer.jpg",
+    "featured": false
+  },
+  {
+    "slug": "video-games-and-aggression",
+    "title": "Video Games and Aggression",
+    "date": "2015-05-10",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 5,
+    "thumbnail": "assets/thumbnails/video-games-and-aggression.jpg",
+    "featured": false
+  },
+  {
+    "slug": "communications-satellite",
+    "title": "Communications Satellite",
+    "date": "2015-05-10",
+    "tags": [
+      "history"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/communications-satellite.jpg",
+    "featured": false
+  },
+  {
+    "slug": "serenity-today-comparing-fictional-tech-with-todays-innovations",
+    "title": "Serenity Today: Comparing Fictional Tech with Todays Innovations",
+    "date": "2015-05-10",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 7,
+    "thumbnail": "assets/thumbnails/serenity-today-comparing-fictional-tech-with-todays-innovations.jpg",
+    "featured": false
+  },
+  {
+    "slug": "grey-kampfe-and-booth",
+    "title": "Grey, Kampfe, and Booth",
+    "date": "2015-05-10",
+    "tags": [
+      "history"
+    ],
+    "readingTime": 5,
+    "thumbnail": "assets/thumbnails/grey-kampfe-and-booth.jpg",
+    "featured": false
+  },
+  {
+    "slug": "virtual-retinal-technology",
+    "title": "Virtual Retinal Technology",
+    "date": "2015-02-21",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 5,
+    "thumbnail": "assets/thumbnails/virtual-retinal-technology.jpg",
+    "featured": false
+  },
+  {
+    "slug": "technological-morality",
+    "title": "Technological Morality",
+    "date": "2015-01-29",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/technological-morality.jpg",
+    "featured": false
+  },
+  {
+    "slug": "the-artificial-intelligence-debate",
+    "title": "The Artificial Intelligence Debate",
+    "date": "2015-01-16",
+    "tags": [
+      "technology"
+    ],
+    "readingTime": 11,
+    "thumbnail": "assets/thumbnails/the-artificial-intelligence-debate.jpg",
+    "featured": false
+  },
+  {
+    "slug": "down-the-rogue-river",
+    "title": "Down the Rogue River",
+    "date": "2014-12-12",
+    "tags": [
+      "writing"
+    ],
+    "readingTime": 5,
+    "thumbnail": "assets/thumbnails/down-the-rogue-river.jpg",
+    "featured": false
+  },
+  {
+    "slug": "history-of-comics-in-the-us",
+    "title": "History of Comics in the U.S.",
+    "date": "2014-12-08",
+    "tags": [
+      "history"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/history-of-comics-in-the-us.jpg",
+    "featured": false
+  },
+  {
+    "slug": "wwi-technology-the-ordnance-survey",
+    "title": "WWI Technology: The Ordnance Survey",
+    "date": "2014-12-03",
+    "tags": [
+      "history"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/wwi-technology-the-ordnance-survey.jpg",
+    "featured": false
+  },
+  {
+    "slug": "where-common-technologies-come-from-transatlantic-communication",
+    "title": "Where Common Technologies Come From: Transatlantic Communication",
+    "date": "2014-12-02",
+    "tags": [
+      "history"
+    ],
+    "readingTime": 3,
+    "thumbnail": "assets/thumbnails/where-common-technologies-come-from-transatlantic-communication.jpg",
+    "featured": false
+  },
+  {
+    "slug": "learning-from-cyrus-field-the-man-behind-the-transatlantic-cable",
+    "title": "Learning from Cyrus Field: The Man Behind the Transatlantic Cable",
+    "date": "2014-12-02",
+    "tags": [
+      "history"
+    ],
+    "readingTime": 2,
+    "thumbnail": "assets/thumbnails/learning-from-cyrus-field-the-man-behind-the-transatlantic-cable.jpg",
+    "featured": false
+  },
+  {
+    "slug": "the-war-over-information",
+    "title": "The War Over Information",
+    "date": "2014-11-25",
+    "tags": [
+      "security"
+    ],
+    "readingTime": 4,
+    "thumbnail": "assets/thumbnails/the-war-over-information.jpg",
+    "featured": false
+  },
+  {
+    "slug": "isis-the-terror-we-created",
+    "title": "ISIS: The Terror We Created",
+    "date": "2014-11-17",
+    "tags": [
+      "news"
+    ],
+    "readingTime": 9,
+    "thumbnail": "assets/thumbnails/isis-the-terror-we-created.jpg",
+    "featured": false
+  },
+  {
+    "slug": "writers-mind-reflecting-on-five-weeks-of-skill-development",
+    "title": "Writers Mind: Reflecting on Five Weeks of Skill Development",
+    "date": "2014-11-16",
+    "tags": [
+      "writing"
+    ],
+    "readingTime": 6,
+    "thumbnail": "assets/thumbnails/writers-mind-reflecting-on-five-weeks-of-skill-development.jpg",
+    "featured": false
+  },
+  {
+    "slug": "my-way-of-life",
+    "title": "My Way of Life",
+    "date": "2014-10-19",
+    "tags": [
+      "writing"
+    ],
+    "readingTime": 4,
+    "thumbnail": "assets/thumbnails/my-way-of-life.jpg",
+    "featured": false
+  }
+]

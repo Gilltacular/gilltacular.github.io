@@ -251,10 +251,28 @@ def main() -> None:
             "featured": False,          # default False set manually
         })
 
+    # Sort by date descending (newest first)
+    all_metadata.sort(key=lambda x: x["date"], reverse=True)
+    
+    # Write posts.json
+    import json
+    with open(POSTS_JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(all_metadata, f, indent=2)
+
     print(f"\nHuzzah! Converted {len(all_metadata)} articles")
     print(f"Hurray! Content files written to {CONTENT_DIR}")
-    print(f"\nNext step: Write posts.json with {len(all_metadata)} entries")
+    print(f"Metadata written to {POSTS_JSON_PATH}")
 
+    # Validation: read back and confirm
+    with open(POSTS_JSON_PATH, "r", encoding="utf-8") as f:
+        validated = json.load(f)
+    
+    print(f"Validated: {len(validated)} entries in posts.json")
+    print(f"\nFirst 3 articles (newest):")
+    for entry in validated[:3]:
+        print(f"  - {entry['date']}: {entry['title']}")
+    print(f"\nLast article (oldest):")
+    print(f"  - {validated[-1]['date']}: {validated[-1]['title']}")
 
 if __name__ == "__main__":
 #    test_parsing()                            # Uncomment this for debugging
