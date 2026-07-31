@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Article - Gilltacular</title>
+
+    <!-- Shared styles -->
+     <link rel="stylesheet" href="../assets/css/global.css">
+     <link rel="stylesheet" href="css/article.css">
+
+    <!-- Preconnect for performance -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body class="article-page">
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Back to Portfolio</a>
+            <a href="index.html">Blog Home</a>
+        </nav>
+    </header>
+
+    <main class="article-container">
+        <article id="article-root">
+            <header class="article-header">
+                <h1 id="article-title">Loading...</h1>
+                <p class="article-meta">
+                    <time id="article-date"></time> •
+                    <span id="article-reading-time"></span> min read
+                </p>
+            </header>
+
+            <div id="article-content" class="article-content">
+                <!-- Dynamic content injected here by article js -->
+                <p class="loading-message">Loading article content...</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Jonathan Gill. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+     <script src="js/utils.js"></script>
+     <script src="js/article.js"></script>
+</body>
+</html>
