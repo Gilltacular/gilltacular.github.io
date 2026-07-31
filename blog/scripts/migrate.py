@@ -136,6 +136,56 @@ def generate_slug(title: str) -> str:
     slug = slug.strip("-")
     return slug
 
+def calculate_reading_time(html_content: str) -> int:
+    """Estimate reading time in minutes.
+    
+    Formula: 200 words per minute (industry standard for adult reading speed).
+    Strips HTML tags to count words in plain text.
+    
+    Returns: Integer minutes (minimum 1 minute).
+    """
+    # First strip HTML tags to get plain text for word count
+    import re                                           # local import (this is only used here)
+    plain_text = re.sub(r"<[^>]+>", " ", html_content)  # Regex to replace HTML tags with spaces
+    word_count = len(plain_text.split())                # count the words by splitting at whitespace
+
+    minutes = max(1, round(word_count / 200))           # 200wpm calculation (1 minute minimum)
+    return minutes
+
+def convert_markdown_to_html(md_text: str) -> str:
+    """Convert Markdown text to HTML using the markdown library.
+
+    Enables standard Markdown extensions for tables, code highlighting, etc.
+
+    Returns: HTML string
+    """
+    html = markdown.markdown(
+        md_text,
+        extensions=["extra", "codehilite"],
+    )
+    return html
+
+def write_content_file(slug: str, title: str, html_body: str) -> None:
+    """Write converted HTML to file data/content/{slug}.html
+    Wraps content in minimal semantic HTML structure.
+    """
+    
+    output_path = CONTENT_DIR / f"{slug}.html"
+
+    if output_path.exists():
+        print(f"   WARNING: Slug collision -- Overwriting {slug}.html")
+
+    html_document = f"""<article>
+  <h1>{title}</h1>
+  <div class="article-content">
+{html_body}
+  </div>
+</article>"""
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(html_document)
+
+    print(f"   Wahoo! Wrote {slug}.html")
+
 def test_parsing() -> None:
     """Quick test of parsing functions."""
     test_file = SRC_DIR / "2014-10-19-my-way-of-life-writing.md"
@@ -164,7 +214,47 @@ def main() -> None:
     source_files = list(SRC_DIR.glob("*.md"))
     create_backup(source_files)
 
-    print("\nWoohoo! Setup complete. Ready for migration!")
+    # Make sure output directory exists
+    CONTENT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Process each file and show work
+    print(f"\nConverting {len(source_files)} articles...")
+    all_metadata = []
+
+    for src_file in source_files:
+        # First read and split
+        frontmatter_yaml, body_markdown = read_md_file(src_file)
+
+        # Second parse the frontmatter
+        metadata = parse_frontmatter(frontmatter_yaml)
+
+        # Third generate slug
+        slug = generate_slug(metadata["title"])
+
+        # Fourth convert markdown to HTML
+        html_body = convert_markdown_to_html(body_markdown)
+
+        # Fifth calculate reading time
+        reading_time = calculate_reading_time(html_body)
+
+        # Sixth write the content file
+        write_content_file(slug, metadata["title"], html_body)
+
+        # Seventh collect metadata for posts.json
+        all_metadata.append({
+            "slug": slug,
+            "title": metadata["title"],
+            "date": metadata["date"],
+            "tags": metadata["tags"],
+            "readingTime": reading_time,
+            "thumbnail": f"assets/thumbnails/{slug}.jpg",
+            "featured": False,          # default False set manually
+        })
+
+    print(f"\nHuzzah! Converted {len(all_metadata)} articles")
+    print(f"Hurray! Content files written to {CONTENT_DIR}")
+    print(f"\nNext step: Write posts.json with {len(all_metadata)} entries")
+
 
 if __name__ == "__main__":
 #    test_parsing()                            # Uncomment this for debugging

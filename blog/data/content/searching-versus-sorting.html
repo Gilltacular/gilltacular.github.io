@@ -1,0 +1,33 @@
+<article>
+  <h1>Searching Versus Sorting</h1>
+  <div class="article-content">
+<p>Searching and sorting while very different principles are in fact similar in how they go about achieving their operations. The best way to show these similarities is to visualize how each works to achieve its end result.</p>
+<p>When we sort something, typically we are taking an input that is unsorted and iterating over it. We make a comparison with every iteration until the list is sorted according to whatever order we determine we need. So in the case of the following set of numbers:</p>
+<p>100, 59, 63, 2, 17, 8</p>
+<p>We would start with iterating on the list comparing values until it looked something like this:</p>
+<p>100, 59, 63, 2, 17, 8 ←- Starting unsorted input</p>
+<p>59, 100, 63, 2, 17, 8</p>
+<p>59, 63, 100, 2, 17, 8</p>
+<p>59, 63, 2, 100, 17, 8</p>
+<p>59, 2, 63, 100, 17, 8</p>
+<p>2, 59, 63, 100, 17, 8</p>
+<p>2, 59, 63, 17, 100, 8</p>
+<p>2, 59, 17, 63, 100, 8</p>
+<p>2, 17, 59, 63, 100, 8</p>
+<p>2, 17, 59, 63, 8, 100</p>
+<p>2, 17, 59, 8, 63, 100</p>
+<p>2, 17, 8, 59, 63, 100</p>
+<p>2, 8, 17, 59, 63, 100 ←- Final sorted result</p>
+<p>In a search we are essentially doing the same exact thing. We decide what we want and then iterate over each element to compare the value to what we want. If they are the same then we have found it, if not then we continue. A simple search would look something like this:</p>
+<p>100, 59, 63, 2, 17, 8 ←- Starting input searching for int 2</p>
+<p>is 100 == 2?</p>
+<p>no- continue</p>
+<p>is 59 == 2?</p>
+<p>no- continue</p>
+<p>is 63 == 2?</p>
+<p>no- continue</p>
+<p>is 2 == 2?</p>
+<p>yes- return result</p>
+<p>The main difference is that in a search you only need to iterate once, unless the input or item to find is changed. A sort will often need to iterate multiple times. Both use comparisons and iteration to achieve their end results.</p>
+  </div>
+</article>
