@@ -3,7 +3,10 @@
  * Loaded first on every page. Page-specific stylesheets override.
  */
 
-/* Reset */
+ /* Google Fonts import */
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:wght@400&display=swap');
+
+ /* Reset */
 *,
 *::before,
 *::after {
@@ -12,73 +15,103 @@
     box-sizing: border-box;
 }
 
-/* Design tokens */
+/* Design tokens - locked pallete per design spec */
 :root {
-    --color-primary: #6d4aff;
-    --color-text: #333333;
-    --color-text-light: #666666;
-    --color-bg: #ffffff;
-    --color-border: #e0e0e0;
-    --color-error: #dc3545;
+    /* Colors */
+    --color-black:          #040303;
+    --color-black-rgb:      4, 3, 3;
+    --color-dark-brown:     #1a1411;
+    --color-medium-brown:   #2d2218;
+    --color-bronze:         #4a3f35;
+    --color-copper:         #b88657;
+    --color-amber:          #8f6b45;
+    --color-cream:          #d9cdc4;
+    --color-smoke:          #9a8b7a;
+    --color-candlelight:    #e8ddd0;
 
-    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    /* Typography */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Libre Baskerville', Georgia, serif;
 
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 2rem;
-    --space-lg: 4rem;
+    /* Line heights */
+    --line-height-heading:  1.2;
+    --line-height-body:     1.6;
+    --line-height-nav:      1.0;
 
-    --max-width: 720px;
-    --border-radius: 6px;
+    /* Spacing scale (8px baseline) */
+    --space-xs:     0.5rem;
+    --space-sm:     1rem;
+    --space-md:     1.5rem;
+    --space-lg:     2rem;
+    --space-xl:     3rem;
+    --space-xxl:    4rem;
+
+    /* Layout */
+    --max-width:            1200px;
+    --border-radius:        4px;
+    --nav-height-desktop:   60px;
+    --nav-height-mobile:    50px;
+    --footer-height:        4rem;
 }
 
-/* Base typography */
+/* Base Typography */
 body {
-    font-family: var(--font-body);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    line-height: 1.6;
-    font-size: 16px;
+    font-family:            var(--font-body);
+    color:                  var(--color-smoke);
+    background-color:       var(--color-black);
+    line-height:            var(--line-height-body);
+    font-size:              1rem;
     -webkit-font-smoothing: antialiased;
 }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family:    var(--font-heading);
+    color:          var(--color-cream);
+    line-height:    var(--line-height-heading);
+}
+
+/* Links */
 a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color 0.2s ease;
+    color:          var(--color-copper);
+    text-decoration:underline;
+    transition:     color 0.2s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+    color:          var(--color-amber);
 }
 
 /* Shared header */
 .site-header {
-    padding: var(--space-sm) var(--space-md);
-    border-bottom: 1px solid var(--color-border);
+    padding:        var(--space-sm) var(--space-md);
+    border-bottom:  1px solid var(--color-bronze);
 }
 
 .site-header nav {
-    display: flex;
-    gap: var(--space-sm);
+    display:    flex;
+    gap:        var(--space-lg);
 }
 
 .site-header nav a {
-    color: var(--color-text);
-    font-weight: 500;
-    font-size: 0.9rem;
+    color:              var(--color-smoke);
+    font-family:        var(--font-body);
+    font-weight:        400;
+    font-size:          1rem;
+    text-decoration:    none;
+    transition:         color 0.2s ease;
 }
 
 .site-header nav a:hover {
-    color: var(--color-primary);
+    color:          var(--color-copper);
 }
 
 /* Shared footer */
 .site-footer {
-    padding: var(--space-sm) var(--space-md);
-    border-top: 1px solid var(--color-border);
+    padding:    var(--space-sm) var(--space-md);
+    border-top: 1px solid var(--color-bronze);
     text-align: center;
-    color: var(--color-text-light);
-    font-size: 0.85rem;
+    color:      var(--color-smoke);
+    font-size:  0.875rem;
 }
+

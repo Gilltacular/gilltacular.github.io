@@ -1,0 +1,350 @@
+/**
+ * portfolio.css — Craftsman aesthetic styles for portfolio landing page.
+ * Loaded after global.css for cascading specificity.
+ * 
+ * Contains portfolio-specific component styles that override or extend
+ * global.css tokens. Does NOT duplicate color/spacing tokens (defined once in global.css).
+ */
+
+/* ===================================================================
+   NAVIGATION
+   Fixed top bar with frosted glass effect
+   =================================================================== */
+
+.navbar {
+    position:           fixed;
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             var(--nav-height-desktop);
+    background:         rgba(var(--color-black-rgb), 0.95);
+    backdrop-filter:    blur(8px);
+    z-index:            1000;
+    display:            flex;
+    align-items:        center;
+    justify-content:    space-between;
+    padding:            0 var(--space-lg);
+    border-bottom:      none;
+}
+
+.navbar-brand {
+    font-family:        var(--font-heading);
+    font-size:          1.25rem;
+    color:              var(--color-copper);
+    text-decoration:    none;
+}
+
+.navbar-nav {
+    display:            flex;
+    gap:                var(--space-lg);
+    list-style:         none;
+    margin:             0;
+    padding:            0;
+}
+
+.navbar-nav a {
+    font-family:        var(--font-body);
+    font-size:          1rem;
+    color:              var(--color-smoke);
+    text-decoration:    none;
+    transition:         color 0.2s ease;
+}
+
+.navbar-nav a:hover {
+    color:              var(--color-copper);
+}
+
+/* ===================================================================
+   HERO SECTION
+   Full viewport height with background image
+   =================================================================== */
+
+.hero {
+    min-height:             100vh;
+    display:                flex;
+    align-items:            center;
+    background-image:       url('/assets/hero-backgrounds/hero-bg-desktop.webp');
+    background-size:        cover;
+    background-position:    center;
+    position:               relative;
+}
+
+.hero-content {
+    padding-left:   var(--space-xl);
+    max-width:      40vw;
+}
+
+.hero h1 {
+    font-size:      4rem;
+    color:          var(--color-cream);
+    margin-bottom:  var(--space-md);
+}
+
+.hero p {
+    font-family:    var(--font-body);
+    font-size:      1.5rem;
+    color:          var(--color-smoke);
+    line-height:    var(--line-height-body);
+}
+
+/* ===================================================================
+   SECTIONS
+   General section styling
+   =================================================================== */
+
+section {
+    padding-top:    var(--space-xxl);
+    padding-bottom: var(--space-xxl);
+}
+
+.section-title {
+    font-size:      2.5rem;
+    margin-bottom:  var(--space-lg);
+}
+
+/* ===================================================================
+   PROJECT CARDS
+   Flat minimalist placeholder style
+   =================================================================== */
+
+.projects-grid {
+    display:                grid;
+    grid-template-columns:  repeat(3, 1fr);
+    gap:                    var(--space-lg);
+}
+
+.project-card {
+    background:     var(--color-dark-brown);
+    border:         1px solid var(--color-bronze);
+    border-radius:  var(--border-radius);
+    padding:        var(--space-md);
+    transition:     border-color 0.2s ease;
+}
+
+.project-card:hover {
+    border-color:   var(--color-copper);
+}
+
+.project-card h3 {
+    font-size:      1.5rem;
+    margin-bottom:  var(--space-sm);
+    color:          var(--color-cream);
+}
+
+.project-card p {
+    font-size:      1rem;
+    color:          var(--color-smoke);
+    margin-bottom:  var(--space-sm);
+}
+
+.tech-stack {
+    display:        flex;
+    flex-wrap:      wrap;
+    gap:            var(--space-xs);
+    margin:         var(--space-sm);
+}
+
+.tech-tag {
+    background:     transparent;
+    border:         1px solid var(--color-copper);
+    border-radius:  2px;
+    padding:        0.25rem 0.5rem;
+    font-size:      0.75rem;
+    color:          var(--color-copper);
+}
+
+/* ===================================================================
+   SECTION INNER WRAPPER
+   Centers content with max-width
+   =================================================================== */
+
+.section-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* ===================================================================
+   ABOUT SECTION
+   =================================================================== */
+
+.about-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-copper);
+    margin-bottom: var(--space-md);
+}
+
+.about-bio {
+    font-size: 1rem;
+    color: var(--color-smoke);
+    margin-bottom: var(--space-lg);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xs);
+}
+
+/* ===================================================================
+   PROJECT CARDS — Additional Styles
+   =================================================================== */
+
+.card-link {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-copper);
+    text-decoration: underline;
+    margin-top: var(--space-sm);
+}
+
+/* ===================================================================
+   CONTACT SECTION
+   =================================================================== */
+
+.contact-inner {
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 1rem;
+    color: var(--color-smoke);
+    margin-bottom: var(--space-xl);
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+/* ===================================================================
+   BUTTONS
+   =================================================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn:focus {
+    outline: 2px solid var(--color-cream);
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    background: var(--color-copper);
+    color: var(--color-black);
+    border: none;
+}
+
+.btn-primary:hover {
+    filter: brightness(0.9);
+    color: var(--color-black);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--color-copper);
+    color: var(--color-copper);
+}
+
+.btn-secondary:hover {
+    background: var(--color-copper);
+    color: var(--color-black);
+}
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+
+.site-footer-craftsman {
+    height: var(--footer-height);
+    background: rgba(var(--color-black-rgb), 0.95);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-lg);
+    border-top: none;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.site-footer-craftsman span {
+    color: var(--color-smoke);
+    font-size: 0.875rem;
+}
+
+.site-footer-craftsman a {
+    color: var(--color-copper);
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.site-footer-craftsman a:hover {
+    color: var(--color-amber);
+}
+
+/* ===================================================================
+   RESPONSIVE BREAKPOINTS
+   =================================================================== */
+
+/* Tablet */
+@media (max-width: 1199px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .navbar {
+        height: var(--nav-height-mobile);
+    }
+
+    .hero {
+        min-height:     100vh;
+        align-items:    flex-start;
+        padding-top:    calc(var(--nav-height-mobile) + var(--space-lg));
+    }
+
+    .hero-content {
+        padding-left:   var(--space-lg);
+        max-width:      90%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding-top:    var(--space-lg);
+        padding-bottom: var(--space-lg);
+    }
+}
+
