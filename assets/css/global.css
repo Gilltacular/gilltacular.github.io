@@ -15,6 +15,11 @@
     box-sizing: border-box;
 }
 
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Design tokens - locked pallete per design spec */
 :root {
     /* Colors */

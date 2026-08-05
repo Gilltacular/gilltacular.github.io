@@ -54,6 +54,11 @@
     color:              var(--color-copper);
 }
 
+.navbar-nav a.active {
+    color: var(--color-copper);
+    text-decoration: underline;
+}
+
 /* ===================================================================
    HERO SECTION
    Full viewport height with background image
@@ -67,6 +72,12 @@
     background-size:        cover;
     background-position:    center;
     position:               relative;
+    opacity:                0;
+    transition:             opacity 1.5s ease;
+}
+
+.hero.loaded {
+    opacity: 1;
 }
 
 .hero-content {
@@ -225,40 +236,45 @@ section {
    =================================================================== */
 
 .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.2s ease;
+    display:          inline-block;
+    padding:          0.75rem 1.5rem;
+    border-radius:    var(--border-radius);
+    font-family:      var(--font-body);
+    font-size:        1rem;
+    text-decoration:  none;
+    transition:       all 0.2s ease;
+    cursor:           pointer;
 }
 
 .btn:focus {
-    outline: 2px solid var(--color-cream);
-    outline-offset: 2px;
+    outline:          2px solid var(--color-cream);
+    outline-offset:   2px;
 }
 
 .btn-primary {
-    background: var(--color-copper);
-    color: var(--color-black);
-    border: none;
+    background:       var(--color-copper);
+    color:            var(--color-black);
+    border:           none;
+    transform:        translateY(0);
 }
 
 .btn-primary:hover {
-    filter: brightness(0.9);
-    color: var(--color-black);
+    filter:           brightness(0.9);
+    transform:        translateY(-2px);
+    color:            var(--color-black);
 }
 
 .btn-secondary {
-    background: transparent;
-    border: 1px solid var(--color-copper);
-    color: var(--color-copper);
+    background:       transparent;
+    border:           1px solid var(--color-copper);
+    color:            var(--color-copper);
+    transform:        translateY(0);
 }
 
 .btn-secondary:hover {
-    background: var(--color-copper);
-    color: var(--color-black);
+    background:       var(--color-copper);
+    transform:        translateY(-2px);
+    color:            var(--color-black);
 }
 
 /* ===================================================================
@@ -375,7 +391,9 @@ section {
 
 /* Full-screen overlay menu */
 .mobile-menu-overlay {
-    display:            none;
+    display:            flex;
+    visibility:         hidden;
+    pointer-events:     none;
     position:           fixed;
     top:                0;
     left:               0;
@@ -388,23 +406,41 @@ section {
     justify-content:    center;
     align-items:        center;
     gap:                2rem;
+    opacity:            0;
+    transform:          translateX(-100%);
+    transition:         opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .mobile-menu-overlay.active {
-    display:            flex;
+    visibility:         visible;
+    pointer-events:     auto;
+    opacity:            1;
+    transform:          translateX(0);
+}
+
+.mobile-menu-overlay nav {
+    display:          flex;
+    flex-direction:   column;
+    gap:              2rem;
+    width:            100%;
+    max-width:        400px;
+    padding:          0 2rem;
 }
 
 .mobile-menu-overlay a {
-    font-family:        var(--font-body);
-    font-size:          1.5rem;
-    color:              var(--color-smoke);
-    text-decoration:    none;
-    padding:            2rem;
-    text-align:         center;
+    font-family:      var(--font-body);
+    font-size:        1.75rem;
+    color:            var(--color-smoke);
+    text-decoration:  none;
+    padding:          1.5rem;
+    text-align:       center;
+    border-radius:    var(--border-radius);
+    transition:       all 0.2s ease;
 }
 
 .mobile-menu-overlay a:hover {
-    color: var(--color-copper);
+    color:            var(--color-copper);
+    background:       rgba(var(--color-black-rgb), 0.2);
 }
 
 /* Close button */
