@@ -148,6 +148,11 @@ window.PortfolioNav = {
 
         // Feature: Scroll fade-in animation
         window.ScrollFade.init();
+
+        // Feature: Initialize Feather Icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }       
         
         console.log('[PortfolioNav] Initialized');
     }

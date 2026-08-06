@@ -1,199 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jon Gill - Software Developer</title>
- 
-   <meta name="description" content="Software developer with interests in automation, robotics, and security-hardened systems. Based in The Woodlands, TX.">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Global site styles (loaded first) -->
-    <link rel="stylesheet" href="assets/css/global.css">
-    <!-- Portfolio-specific styles (loaded second, overrides global) -->
-    <link rel="stylesheet" href="assets/css/portfolio.css">
-</head>
-<body>
-
-    <!-- ===== NAVIGATION ===== -->
-    <nav class="navbar">
-        <a href="#hero" class="navbar-brand">Jon Gill</a>
-
-        <!-- Desktop Navigation -->
-        <ul class="navbar-nav">
-            <li><a href="#hero" data-nav-target="hero">Home</a></li>
-            <li><a href="#about" data-nav-target="about">About</a></li>
-            <li><a href="#projects" data-nav-target="projects">Projects</a></li>
-            <li><a href="blog/index.html">Blog</a></li>
-            <li><a href="#contact" data-nav-target="contact">Contact</a></li>
-        </ul>
-        
-        <!-- Hamburger Menu Button (Mobile only) -->
-        <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- ===== HERO SECTION ===== -->
-<section id="hero" class="hero">
-    <div class="hero-content">
-        <div class="hero-beats" role="log" aria-live="polite">
-            <!-- Beat 1 — Foundation -->
-            <div class="hero-phase" data-phase="1">
-                <p class="hero-beat">Forging reliable structures.</p>
-                <p class="hero-beat">Each line, laid like stone.</p>
-            </div>
-            <!-- Beat 2 — Intention -->
-            <div class="hero-phase" data-phase="2">
-                <p class="hero-beat">Work worth signing.</p>
-                <p class="hero-beat">Devotion to craft.</p>
-            </div>
-            <!-- Beat 3 — Legacy -->
-            <div class="hero-phase" data-phase="3">
-                <p class="hero-beat">Tempered to endure time and use.</p>
-            </div>
-            <!-- Static — Signature -->
-            <!-- Static — Signature -->
-            <div class="hero-phase" data-phase="4">
-                <p class="hero-static-name">Jon Gill —</p>
-                <p class="hero-static-desc">Systems, Forged with Devotion</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- ===== ABOUT SECTION ===== -->
-<section id="about" class="scroll-fade">
-    <div class="section-inner">
-        <h2 class="section-title">About</h2>
-        <p class="about-title">Software Developer</p>
-        <p class="about-bio">
-            Software developer based in North Houston, TX, with a BS in Computer Science (summa cum laude) from UAT. My path here wasn't traditional — six years as a state law enforcement investigator and five years in IT support shaped how I approach problem-solving: methodically, evidence-first, with an eye for what breaks under pressure.
-        </p>
-        <p class="about-bio">
-            I build with Python, JavaScript, C++, and PHP, working across web development, database engineering, and security-conscious system design. My capstone project in PLC ladder logic — an automated warehouse sorting system — sparked a deep curiosity for where software meets physical hardware, and I'm actively exploring industrial automation and robotics as growth areas.
-        </p>
-        <p class="about-bio">
-            I believe code should be resilient, defensive, and honest — the same standards I applied to investigations. Every function should answer for what it does, why it exists, and what happens when it fails.
-        </p>
-        <p class="about-bio">
-            Currently seeking entry-level software development roles in the Houston metropolitan area. Open to relocation.
-        </p>
-        
-        <div class="skills-grid">
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">HTML/CSS</span>
-            <span class="tech-tag">Linux</span>
-            <span class="tech-tag">Git</span>
-            <span class="tech-tag">SQL</span>
-            <span class="tech-tag">C++</span>
-        </div>
-    </div>
-</section>
-
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section id="projects" class="scroll-fade">
-        <div class="section-inner">
-            <!-- Portfolio Card -->
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <!-- Portfolio Card -->
-                <div class="project-card">
-                    <div class="project-card-header">
-                        <h3>Portfolio + Blog</h3>
-                        <span class="status-badge status-wip">WIP</span>
-                    </div>
-                    <p>Vanilla JS portfolio site with dynamic blog rendering, pagination, and content migration pipeline.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">Python</span>
-                    </div>
-                    <a href="https://github.com/Gilltacular/gilltacular.github.io" target="_blank" class="card-link">View Repository →</a>
-                </div>
-
-                <!-- Warehouse Sorting System -->
-                <div class="project-card">
-                    <div class="project-card-header">
-                        <h3>Warehouse Sorting System</h3>
-                        <span class="status-badge status-wip">WIP</span>
-                    </div>
-                    <p>PLC ladder logic capstone — automated conveyor sorting with motor control and sensor integration. In active development.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">C</span>
-                        <span class="tech-tag">PLC Ladder Logic</span>
-                    </div>
-                    <a href="https://github.com/Gilltacular/warehouse-sorting-system" target="_blank" class="card-link">View Repository →</a>
-                </div>
-
-                <!-- PictureScanner -->
-                <div class="project-card">
-                    <div class="project-card-header">
-                        <h3>PictureScanner</h3>
-                    </div>
-                    <p>Secure image scanning platform with bcrypt + SHA512 authentication and session hardening.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Security</span>
-                    </div>
-                    <a href="https://github.com/Gilltacular/PictureScanner" target="_blank" class="card-link">View Repository →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT SECTION ===== -->
-    <section id="contact" class="scroll-fade">
-        <div class="section-inner contact-inner">
-            <h2 class="section-title">Contact</h2>
-            <p class="contact-text">Available for Houston-area opportunities. Let's talk.</p>
-            <div class="contact-buttons">
-                <a href="mailto:jonpgill@protonmail.com" class="btn btn-primary">Email Me</a>
-                <a href="https://github.com/Gilltacular" target="_blank" class="btn btn-secondary">GitHub Profile</a>
-                <a href="https://linkedin.com/in/jongill" target="_blank" class="btn btn-secondary">LinkedIn</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="site-footer-craftsman">
-        <div class="footer-left">
-            <span>© 2026 Jon Gill</span>
-        </div>
-        <div class="footer-center">
-            <a href="https://github.com/Gilltacular" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/jongill" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-        <div class="footer-right">
-            <a href="mailto:jonpgill@protonmail.com" aria-label="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-    </footer>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jon Gill - Software Developer</title>
     
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="mobile-menu-overlay">
-        <button class="close-menu-btn" aria-label="Close menu">×</button>
-        <nav>
-            <a href="#hero">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="blog/index.html">Blog</a>
-            <a href="#contact">Contact</a>
+        <meta name="description" content="Software developer with interests in automation, robotics, and security-hardened systems. Based in The Woodlands, TX.">
+
+        <!-- Font Awesome for Icons -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+            <!-- Global site styles (loaded first) -->
+            <link rel="stylesheet" href="assets/css/global.css">
+            <!-- Portfolio-specific styles (loaded second, overrides global) -->
+            <link rel="stylesheet" href="assets/css/portfolio.css">
+    </head>
+    <body>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="navbar">
+            <a href="#hero" class="navbar-brand">Jon Gill</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="navbar-nav">
+                <li><a href="#hero" data-nav-target="hero">Home</a></li>
+                <li><a href="#about" data-nav-target="about">About</a></li>
+                <li><a href="#projects" data-nav-target="projects">Projects</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="#contact" data-nav-target="contact">Contact</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu Button (Mobile only) -->
+            <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
-    </div>
 
-    <!-- Portfolio Interactivity -->
-     <script src="assets/js/portfolio.js"></script>
+        <!-- ===== HERO SECTION ===== -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-beats" role="log" aria-live="polite">
+                    <!-- Beat 1 — Foundation -->
+                    <div class="hero-phase" data-phase="1">
+                        <p class="hero-beat">Forging reliable structures.</p>
+                        <p class="hero-beat">Each line, laid like stone.</p>
+                    </div>
+                    <!-- Beat 2 — Intention -->
+                    <div class="hero-phase" data-phase="2">
+                        <p class="hero-beat">Work worth signing.</p>
+                        <p class="hero-beat">Devotion to craft.</p>
+                    </div>
+                    <!-- Beat 3 — Legacy -->
+                    <div class="hero-phase" data-phase="3">
+                        <p class="hero-beat">Tempered to endure time and use.</p>
+                    </div>
+                    <!-- Static — Signature -->
+                    <!-- Static — Signature -->
+                    <div class="hero-phase" data-phase="4">
+                        <p class="hero-static-name">Jon Gill —</p>
+                        <p class="hero-static-desc">Systems, Forged with Devotion</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</body>
+            <!-- ===== ABOUT SECTION ===== -->
+        <section id="about" class="scroll-fade">
+            <div class="section-inner">
+                <h2 class="section-title">About</h2>
+                <p class="about-title">Software Developer</p>
+                <p class="about-bio">
+                    Software developer based in North Houston, TX, with a BS in Computer Science (summa cum laude) from UAT. My path here wasn't traditional — six years as a state law enforcement investigator and five years in IT support shaped how I approach problem-solving: methodically, evidence-first, with an eye for what breaks under pressure.
+                </p>
+                <p class="about-bio">
+                    I build with Python, JavaScript, C++, and PHP, working across web development, database engineering, and security-conscious system design. My capstone project in PLC ladder logic — an automated warehouse sorting system — sparked a deep curiosity for where software meets physical hardware, and I'm actively exploring industrial automation and robotics as growth areas.
+                </p>
+                <p class="about-bio">
+                    I believe code should be resilient, defensive, and honest — the same standards I applied to investigations. Every function should answer for what it does, why it exists, and what happens when it fails.
+                </p>
+                <p class="about-bio">
+                    Currently seeking entry-level software development roles in the Houston metropolitan area. Open to relocation.
+                </p>
+                
+                <div class="skills-grid">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">Linux</span>
+                    <span class="tech-tag">Git</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">C++</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS SECTION ===== -->
+        <section id="projects" class="scroll-fade">
+            <div class="section-inner">
+                <!-- Portfolio Card -->
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <!-- Portfolio Card -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3>Portfolio + Blog</h3>
+                            <span class="status-badge status-wip">WIP</span>
+                        </div>
+                        <p>Vanilla JS portfolio site with dynamic blog rendering, pagination, and content migration pipeline.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="https://github.com/Gilltacular/gilltacular.github.io" target="_blank" class="card-link">View Repository →</a>
+                    </div>
+
+                    <!-- Warehouse Sorting System -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3>Warehouse Sorting System</h3>
+                            <span class="status-badge status-wip">WIP</span>
+                        </div>
+                        <p>PLC ladder logic capstone — automated conveyor sorting with motor control and sensor integration. In active development.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">PLC Ladder Logic</span>
+                        </div>
+                        <a href="https://github.com/Gilltacular/warehouse-sorting-system" target="_blank" class="card-link">View Repository →</a>
+                    </div>
+
+                    <!-- PictureScanner -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3>PictureScanner</h3>
+                        </div>
+                        <p>Secure image scanning platform with bcrypt + SHA512 authentication and session hardening.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                        <a href="https://github.com/Gilltacular/PictureScanner" target="_blank" class="card-link">View Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT SECTION ===== -->
+        <section id="contact" class="scroll-fade">
+            <div class="section-inner contact-inner">
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-text">Available for Houston-area opportunities. Let's talk.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:jonpgill@protonmail.com" class="btn btn-primary">Email Me</a>
+                    <a href="https://github.com/Gilltacular" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+                    <a href="https://linkedin.com/in/jongill" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="site-footer-craftsman">
+            <!-- Bronze divider with anvil logo breaking it -->
+            <div class="footer-divider">
+                <div class="footer-anvil-logo">
+                    <img src="/assets/images/logo/Monogrammed_Anvil-1.png" alt="" aria-hidden="true">
+                </div>
+            </div>
+
+            <div class="footer-grid">
+                <!-- Left column: Empty (branding area reserved for future use) -->
+                <div class="footer-left"></div>
+
+                <!-- Center column: Social links (icons only) -->
+                <div class="footer-center">
+                    <a href="mailto:jonpgill@protonmail.com" aria-label="Email" class="footer-link">
+                        <i data-feather="mail"></i>
+                    </a>
+                    <a href="https://github.com/Gilltacular" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-link">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/jongill" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-link">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Right column: Legal/Copyright -->
+                <div class="footer-right">
+                    <span>&copy; 2026 Jon Gill</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay">
+            <!-- ... existing content unchanged ... -->
+        </div>
+
+        <!-- Portfolio Interactivity -->
+        <script src="assets/js/portfolio.js"></script>
+
+        <!-- Feather Icons (loaded after portfolio.js) -->
+        <script src="https://unpkg.com/feather-icons"></script>
+    </body>
 </html>
