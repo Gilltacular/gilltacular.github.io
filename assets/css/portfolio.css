@@ -197,45 +197,165 @@ section {
 }
 
 /* ===================================================================
-   PROJECT CARDS
-   Flat minimalist placeholder style
+   PROJECT CARDS — ALTERNATING LAYOUT WITH HOVER EFFECTS
    =================================================================== */
 
-.projects-grid {
-    display:                grid;
-    grid-template-columns:  repeat(3, 1fr);
-    gap:                    var(--space-lg);
+.project-card-wrapper {
+    display: flex;
+    position: relative;
+    margin-bottom: var(--space-xl);
+    max-width: 700px;
+}
+
+.project-card-wrapper:nth-child(even) {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.project-card-wrapper:nth-child(odd) {
+    justify-content: flex-start;
+}
+
+.card-link-overlay {
+    display: block;
+    position: relative;
+    z-index: 3;  /* Card content on top */
+    width: 100%;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
 .project-card {
-    background:     var(--color-dark-brown);
-    border:         1px solid var(--color-bronze);
-    border-radius:  var(--border-radius);
-    padding:        var(--space-md);
-    transition:     border-color 0.2s ease;
+    background: var(--color-dark-brown);
+    border: 1px solid var(--color-bronze);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    position: relative;
+    transition: border-color 0.3s ease;
 }
 
-.project-card:hover {
-    border-color:   var(--color-copper);
+.project-card-wrapper:hover .card-link-overlay {
+    transform: translateY(-4px);
+}
+
+/* ===================================================================
+   COAL GLOW PULSE — red/orange/yellow cycling, continuous on hover
+   =================================================================== */
+
+.project-card-wrapper:hover .project-card {
+    animation: coal-glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes coal-glow-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 6px 28px 3px rgba(220, 50, 20, 0.15),
+            inset 0 -3px 12px 2px rgba(180, 30, 10, 0.1);
+    }
+    33% {
+        box-shadow: 
+            0 6px 32px 5px rgba(255, 140, 0, 0.25),
+            inset 0 -3px 14px 2px rgba(220, 60, 20, 0.15);
+    }
+    66% {
+        box-shadow: 
+            0 6px 30px 4px rgba(255, 200, 30, 0.2),
+            inset 0 -3px 14px 2px rgba(200, 50, 20, 0.12);
+    }
+}
+
+/* ===================================================================
+   CARD CONTENT
+   =================================================================== */
+
+.project-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
 }
 
 .project-card h3 {
-    font-size:      1.5rem;
-    margin-bottom:  var(--space-sm);
-    color:          var(--color-cream);
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    color: var(--color-cream);
 }
 
-/* Project card header wrapper for title + badge */
-.project-card-header {
+.project-card > p {
+    font-size: 1rem;
+    color: var(--color-smoke);
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+.tech-stack {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-sm);
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
 }
 
-/* Status badge base styles */
-.status-badge {
+.tech-tag {
+    background: transparent;
+    border: 1px solid var(--color-bronze);
+    border-radius: 2px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-candlelight);
+}
+
+.card-arrow {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    font-size: 1.25rem;
+    color: var(--color-copper);
+    opacity: 0;
+    transform: translateX(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card-wrapper:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===================================================================
+   REDUCED MOTION + MOBILE
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card-wrapper:hover .project-card {
+        animation: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .project-card-wrapper {
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
+    }
+
+    .card-arrow {
+        display: none;
+    }
+
+    .project-card-wrapper:hover .project-card {
+        animation: none;
+        box-shadow: none;
+    }
+}
+
+/* ===================================================================
+   BADGE SYSTEM
+   Status indicators — forge coal glow underneath
+   =================================================================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-body);
     font-size: 0.625rem;
     text-transform: uppercase;
@@ -243,35 +363,106 @@ section {
     padding: 0.2rem 0.5rem;
     border-radius: 2px;
     white-space: nowrap;
+    min-height: 1.5rem;
+    line-height: 1.4;
+    position: relative;
 }
 
-/* WIP status variant (COPPER by default) */
-.status-wip {
+/* Align badges to top of header */
+.project-card-header {
+    align-items: flex-start;
+}
+
+/* Base: In Development — forge coal glow underneath */
+.badge--in-development {
     background: transparent;
     border: 1px solid var(--color-copper);
     color: var(--color-copper);
+    transition: all 0.3s ease;
 }
 
-.project-card p {
-    font-size:      1rem;
-    color:          var(--color-smoke);
-    margin-bottom:  var(--space-sm);
+/* Forge coal glow underneath (hot ember effect) */
+.badge--in-development::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        rgba(184, 134, 87, 0) 0%,
+        rgba(238, 178, 121, 0.5) 50%,
+        rgba(184, 134, 87, 0) 100%
+    );
+    animation: forge-coal-glow 3s ease-in-out infinite;
 }
 
-.tech-stack {
-    display:        flex;
-    flex-wrap:      wrap;
-    gap:            var(--space-xs);
-    margin:         var(--space-sm);
+/* Coal glow animation — gentle pulsing heat from below */
+@keyframes forge-coal-glow {
+    0%, 100% {
+        opacity: 0.5;
+        filter: blur(1px);
+    }
+    50% {
+        opacity: 1;
+        filter: blur(2px);
+    }
 }
 
-.tech-tag {
-    background:     transparent;
-    border:         1px solid var(--color-copper);
-    border-radius:  2px;
-    padding:        0.25rem 0.5rem;
-    font-size:      0.75rem;
-    color:          var(--color-copper);
+/* HOVER — Triggered by CARD HOVER, refined intensity */
+.project-card:hover .badge--in-development {
+    border: 1.5px solid var(--color-amber);
+    background: rgba(184, 134, 87, 0.1);
+    color: var(--color-amber);
+}
+
+.project-card:hover .badge--in-development::after {
+    height: 3px;
+    bottom: -6px;
+    left: 5%;
+    right: 5%;
+    background: linear-gradient(90deg,
+        rgba(184, 134, 87, 0) 0%,
+        rgba(184, 134, 87, 0.7) 50%,
+        rgba(184, 134, 87, 0) 100%
+    );
+    filter: blur(2px);
+}
+
+/* Complete — solid/stable appearance */
+.badge--complete {
+    background: var(--color-copper);
+    border: 1px solid var(--color-copper);
+    color: var(--color-black);
+}
+
+/* Archived — muted appearance */
+.badge--archived {
+    background: transparent;
+    border: 1px solid var(--color-bronze);
+    color: var(--color-smoke);
+}
+
+/* Reduced motion — disable all animations */
+@media (prefers-reduced-motion: reduce) {
+    .badge--in-development::after {
+        animation: none;
+        opacity: 0.5;
+    }
+
+    .project-card:hover .badge--in-development {
+        background: transparent;
+        border-color: var(--color-copper);
+        color: var(--color-copper);
+    }
+
+    .project-card:hover .badge--in-development::after {
+        height: 2px;
+        bottom: -4px;
+        left: 15%;
+        right: 15%;
+        filter: blur(1px);
+    }
 }
 
 /* ===================================================================
@@ -303,23 +494,109 @@ section {
     max-width: 65ch;
 }
 
+/* ===================================================================
+   SKILLS SECTION
+   Skill pills — text transforms from skill name to years on hover
+   =================================================================== */
+
+.skills-section {
+    max-width: 65ch;
+    margin: var(--space-xl) auto;
+}
+
+.skills-intro {
+    font-size: 1rem;
+    color: var(--color-smoke);
+    margin-bottom: var(--space-md);
+    font-style: italic;
+}
+
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xs);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--color-bronze);
+    border-radius: var(--border-radius);
+    background: transparent;
+    color: var(--color-candlelight);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    cursor: help;
+    position: relative;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-pill:hover {
+    border-color: var(--color-copper);
+    color: var(--color-copper);
+}
+
+/* Default: show skill name, hide experience */
+.skill-name {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.skill-exp {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* On hover: fade out skill name, fade in experience */
+.skill-pill:hover .skill-name {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.skill-pill:hover .skill-exp {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Focus state for keyboard accessibility */
+.skill-pill:focus .skill-name {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.skill-pill:focus .skill-exp {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduced motion — skip animation, always show skill name */
+@media (prefers-reduced-motion: reduce) {
+    .skill-name,
+    .skill-exp {
+        transition: none;
+    }
+
+    .skill-exp {
+        display: none;
+    }
 }
 
 /* ===================================================================
-   PROJECT CARDS — Additional Styles
+   PROJECT CARDS
    =================================================================== */
 
-.card-link {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    color: var(--color-copper);
-    text-decoration: underline;
-    margin-top: var(--space-sm);
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    justify-items: stretch;
+}
+
+/* Widen the projects section beyond the 800px section-inner default */
+#projects .section-inner {
+    max-width: 1100px;
 }
 
 /* ===================================================================
@@ -390,41 +667,134 @@ section {
 
 /* ===================================================================
    FOOTER
+   3-column grid with bronze divider and anvil logo
    =================================================================== */
 
 .site-footer-craftsman {
-    height: var(--footer-height);
-    background: rgba(var(--color-black-rgb), 0.95);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 var(--space-lg);
-    border-top: none;
+    background: var(--color-black);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-bronze);
+    position: relative;
 }
 
-.footer-left,
-.footer-center {
+/* Bronze divider with anvil breaking through */
+.footer-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-bronze);
+    overflow: visible;
+}
+
+.footer-anvil-logo {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: auto;
+    z-index: 1;
+}
+
+.footer-anvil-logo img {
+    display: block;
+    width: 3rem;
+    height: auto;
+}
+
+/* 3-column grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--space-md);
-},
+    padding: var(--space-xl) var(--space-lg) var(--space-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Left column: reserved/empty */
+.footer-left {
+    /* Reserved for future branding use */
+}
+
+/* Center column: Email + Social links */
+.footer-center {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-copper);
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-amber);
+}
+
+.footer-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke-width: 0.5px; /* Regular 0.5px stroke per spec */
+}
+
+/* Right column: Legal/Copyright */
 .footer-right {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
-.site-footer-craftsman span {
+.footer-right span {
     color: var(--color-smoke);
     font-size: 0.875rem;
 }
 
-.site-footer-craftsman a {
-    color: var(--color-copper);
-    font-size: 1.25rem;
-    text-decoration: none;
-}
+/* ===================================================================
+   RESPONSIVE FOOTER (Mobile)
+   Stack vertically, center alignment
+   =================================================================== */
 
-.site-footer-craftsman a:hover {
-    color: var(--color-amber);
+@media (max-width: 767px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-lg);
+    }
+
+    .footer-left {
+        /* Empty on mobile too */
+    }
+
+    .footer-center {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-md);  /* Reduced from lg for tighter icon spacing */
+        align-items: center;
+    }
+
+    .footer-link {
+        justify-content: center;
+    }
+
+    .footer-right {
+        justify-content: center;
+    }
+
+    .footer-anvil-logo {
+        width: 2.5rem;
+        top: -1.25rem;
+    }
 }
 
 /* ===================================================================
@@ -600,5 +970,31 @@ section {
 
     .hamburger-btn {
         display: block;
+    }
+}
+
+/* ===================================================================
+   SCROLL FADE-IN ANIMATION
+   Sections fade from opacity 0.3 → 0.9 with upward slide
+   =================================================================== */
+
+.scroll-fade {
+    opacity: 0.3;
+    transform: translateY(15px);
+    transition: opacity 1.4s cubic-bezier(0.2, 0.6, 0.3, 1),
+                transform 1.4s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+
+.scroll-fade.visible {
+    opacity: 0.9;
+    transform: translateY(0);
+}
+
+/* Reduced motion — skip animation, content visible */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-fade {
+        transition: none;
+        opacity: 1;
+        transform: none;
     }
 }
