@@ -1,139 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume — Jon Gill</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary: #6d4aff; --dark: #1a1a2e; --light: #f8f9fa; }
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.8;
-            color: var(--dark);
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-        header {
-            border-bottom: 3px solid var(--primary);
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .contact-info { color: #666; margin-bottom: 2rem; }
-        .download-btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
-        section { margin-bottom: 2rem; }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        h3 { color: var(--dark); margin-top: 1rem; margin-bottom: 0.5rem; }
-        ul { margin-left: 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        .date { color: #666; font-size: 0.9rem; float: right; }
-        @media (max-width: 600px) {
-            .date { display: block; float: none; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Jon Gill</h1>
-        <div class="contact-info">
-            The Woodlands, TX • jonpgill@protonmail.com<br>
-            Portfolio: <a href="https://gilltacular.github.io">gilltacular.github.io</a> • GitHub: <a href="https://github.com/Gilltacular">github.com/Gilltacular</a> • LinkedIn: <a href="https://linkedin.com/in/jonpgill">linkedin.com/in/jonpgill</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <title>Resume — Jon Gill</title>
+
+        <!-- Font Awesome for Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- Global site styles (loaded first) -->
+        <link rel="stylesheet" href="assets/css/global.css">
+        <!-- Portfolio-specific styles (loaded second, overrides global) -->
+        <link rel="stylesheet" href="assets/css/portfolio.css">
+        <!-- Resume-specific styles (loaded last) -->
+        <link rel="stylesheet" href="assets/css/resume.css">
+    </head>
+    <body>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="navbar">
+            <a href="/" class="navbar-brand">Jon Gill</a>
+
+            <ul class="navbar-nav">
+                <li><a href="/#hero">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/blog/index.html">Blog</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+
+            <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- ===== RESUME PAGE ===== -->
+        <main class="resume-page">
+            <div class="resume-container">
+
+                <!-- Title + Download -->
+                <header class="resume-header">
+                    <h1 class="resume-title">Resume</h1>
+                    <a href="assets/resumes/jon-gill-resume.pdf" class="btn btn-primary resume-download-btn" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </header>
+
+                <!-- ===== SKILLS ===== -->
+                <section class="resume-section">
+                    <h2 class="resume-section-title">
+                        <i class="fas fa-laptop-code"></i> Skills
+                    </h2>
+                    <hr class="resume-divider">
+
+                    <div class="skills-columns">
+                        <div class="skills-column">
+                            <h3 class="skills-column-title">Languages &amp; Web</h3>
+                            <ul class="skills-list">
+                                <li>Python</li>
+                                <li>C++</li>
+                                <li>PHP 8</li>
+                                <li>JavaScript</li>
+                                <li>SQL</li>
+                                <li>PLC Ladder Logic</li>
+                                <li>HTML5 / CSS3</li>
+                                <li>Bootstrap</li>
+                                <li>REST API Design</li>
+                            </ul>
+                        </div>
+
+                        <div class="skills-column">
+                            <h3 class="skills-column-title">Database &amp; Security</h3>
+                            <ul class="skills-list">
+                                <li>Relational Schema Design</li>
+                                <li>Normalized Data Modeling</li>
+                                <li>Prepared Statements</li>
+                                <li>Query Optimization</li>
+                                <li>bcrypt Hashing</li>
+                                <li>SHA512 Client-Side Hashing</li>
+                                <li>Session Hardening</li>
+                                <li>CSRF Tokens</li>
+                                <li>XSS Mitigation</li>
+                                <li>OWASP Best Practices</li>
+                            </ul>
+                        </div>
+
+                        <div class="skills-column">
+                            <h3 class="skills-column-title">Tools &amp; Methodologies</h3>
+                            <ul class="skills-list">
+                                <li>Git / GitHub</li>
+                                <li>Linux (Arch / Ubuntu)</li>
+                                <li>Apache</li>
+                                <li>phpMyAdmin</li>
+                                <li>VS Code</li>
+                                <li>Version Control Workflows</li>
+                                <li>Code Review</li>
+                                <li>Documentation</li>
+                                <li>Modular Design</li>
+                                <li>MVC Principles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== PROFESSIONAL EXPERIENCE ===== -->
+                <section class="resume-section">
+                    <h2 class="resume-section-title">
+                        <i class="fas fa-briefcase"></i> Professional Experience
+                    </h2>
+                    <hr class="resume-divider">
+
+                    <!-- Position 1 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-role">Investigator, Statewide Drug Enforcement Unit</h3>
+                            <span class="experience-date">Apr 2024 <i class="fas fa-arrow-right"></i> Apr 2026</span>
+                        </div>
+                        <p class="experience-org">Alaska Department of Public Safety</p>
+                        <p class="experience-desc">Managed complex multi-variable investigations requiring systematic hypothesis testing and evidence-based conclusions — methodology directly transferable to debugging and root cause analysis. Held federal security clearance (USPIS); LEOSINT-trained in open-source intelligence gathering. Maintained meticulous documentation standards across 50+ concurrent case files. Served as sole rural investigator with self-directed workload management without direct supervision.</p>
+                    </div>
+
+                    <!-- Position 2 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-role">Field Training Officer &amp; State Trooper</h3>
+                            <span class="experience-date">Jul 2020 <i class="fas fa-arrow-right"></i> Apr 2024</span>
+                        </div>
+                        <p class="experience-org">Alaska DPS</p>
+                        <p class="experience-desc">Certified instructor who developed curriculum and trained recruits on complex procedural systems. Translated technical regulations into actionable workflows for diverse audiences. Provided court testimony, communicating technical findings to non-technical stakeholders with precision.</p>
+                    </div>
+
+                    <!-- Position 3 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-role">Advanced Repair Agent &amp; Communications Manager</h3>
+                            <span class="experience-date">Oct 2015 <i class="fas fa-arrow-right"></i> May 2020</span>
+                        </div>
+                        <p class="experience-org">Best Buy</p>
+                        <p class="experience-desc">Diagnosed and resolved hardware/software issues across Windows, macOS, and Linux platforms. Configured LAN/WAN/VPN networks and managed ticketing system with SLA tracking. Mentored junior technicians on diagnostic methodology and documentation standards.</p>
+                    </div>
+
+                </section>
+
+                <!-- ===== EDUCATION ===== -->
+                <section class="resume-section">
+                    <h2 class="resume-section-title">
+                        <i class="fas fa-graduation-cap"></i> Education
+                    </h2>
+                    <hr class="resume-divider">
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-role">B.S. Computer Science — Summa Cum Laude</h3>
+                            <span class="experience-date">2013 <i class="fas fa-arrow-right"></i> 2017</span>
+                        </div>
+                        <p class="experience-org">University of Advancing Technology | GPA: 3.9/4.0</p>
+                        <p class="experience-desc">Relevant coursework: Programming (Python, C++, Java), Systems Architecture, Networks, Security, Database Design, Algorithms.</p>
+                    </div>
+                </section>
+
+                <!-- ===== CERTIFICATIONS ===== -->
+                <section class="resume-section">
+                    <h2 class="resume-section-title">
+                        <i class="fas fa-certificate"></i> Certifications
+                    </h2>
+                    <hr class="resume-divider">
+
+                    <ul class="cert-list">
+                        <li>Law Enforcement Open-Source Intelligence (LEOSINT)</li>
+                    </ul>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="site-footer-craftsman">
+            <div class="footer-divider">
+                <div class="footer-anvil-logo">
+                    <img src="/assets/images/logo/Monogrammed_Anvil-1.png" alt="" aria-hidden="true">
+                </div>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-left"></div>
+
+                <div class="footer-center">
+                    <a href="mailto:jonpgill@protonmail.com" aria-label="Email" class="footer-link">
+                        <i data-feather="mail"></i>
+                    </a>
+                    <a href="https://github.com/Gilltacular" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-link">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/jongill" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-link">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                </div>
+
+                <div class="footer-right">
+                    <span>&copy; 2026 Jon Gill</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay">
+            <button class="close-menu-btn" aria-label="Close menu">&times;</button>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/#about">About</a>
+                <a href="/#projects">Projects</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/#contact">Contact</a>
+            </nav>
         </div>
-        <a href="assets/resumes/jon-gill-resume.pdf" class="download-btn" download>Download PDF Version</a>
-    </header>
 
-    <section>
-        <h2>Professional Summary</h2>
-        <p>Computer Science graduate (Summa Cum Laude, 3.9 GPA) with hands-on full-stack development experience in PHP, Python, C++, and JavaScript. Built and deployed production web applications with secure authentication, database design, and server-side processing. Experienced in LAMP stack administration, Git version control workflows, and security-hardened development practices including OWASP-aligned protections against SQL injection, XSS, CSRF, and brute-force attacks.</p>
-    </section>
-
-    <section>
-        <h2>Technical Skills</h2>
-        <strong>Languages:</strong> Python, C++, PHP, JavaScript, SQL, PLC Ladder Logic (Allen-Bradley)<br>
-        <strong>Web Development:</strong> PHP 8, MySQL/MariaDB, JavaScript, Bootstrap, HTML5/CSS3, REST API design<br>
-        <strong>Database:</strong> Relational schema design, normalized data modeling, prepared statements, query optimization<br>
-        <strong>Security:</strong> bcrypt password hashing, SHA512 client-side hashing, session hardening, CSRF tokens, XSS mitigation, brute-force protection, OWASP best practices<br>
-        <strong>Tools & Systems:</strong> Git/GitHub, Linux (Arch/Ubuntu), Apache, phpMyAdmin, LibreOffice Calc, VS Code
-    </section>
-
-    <section>
-        <h2>Projects</h2>
-        
-        <h3>PictureScanner — Secure Full-Stack Web Application <a href="https://github.com/Gilltacular/PictureScanner" target="_blank">(View Code)</a></h3>
-        <ul>
-            <li>Developed PHP/MySQL image repository with user registration, authentication, and color analysis engine</li>
-            <li>Implemented hybrid authentication: client-side SHA512 hashing + server-side bcrypt verification</li>
-            <li>Engineered brute-force protection with timed login attempt tracking and account lockout</li>
-            <li>Prevented SQL injection via mysqli prepared statements across all database interactions</li>
-            <li>Mitigated XSS through output escaping (htmlspecialchars) and session-based access control</li>
-            <li>Added server-side file validation: MIME type verification, size limiting, filename sanitization</li>
-        </ul>
-
-        <h3>BitHeroesOneTool — Relational Data Modeling <a href="https://github.com/Gilltacular/BitHeroesOneTool" target="_blank">(View Code)</a></h3>
-        <ul>
-            <li>Designed 12+ interconnected data tables with relational foreign key relationships</li>
-            <li>Built dynamic lookup functions across multiple sheets with dropdown-driven selection</li>
-            <li>Modeled 500+ items, 120+ entities, and 88 variant configurations</li>
-        </ul>
-
-        <h3>Warehouse Sorting System — PLC Automation <a href="https://github.com/Gilltacular/warehouse-sorting-system" target="_blank">(View Code)</a></h3>
-        <ul>
-            <li>Programmed Allen-Bradley PLC ladder logic for conveyor control</li>
-            <li>Implemented photoeye counting, FIFO/LIFO queue management</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Experience</h2>
-        
-        <h3>Investigator, Statewide Drug Enforcement Unit <span class="date">04/2024 – 04/2026</span></h3>
-        <p>Alaska Department of Public Safety</p>
-        <ul>
-            <li>Managed complex multi-variable investigations requiring systematic hypothesis testing and evidence-based conclusions</li>
-            <li>Held federal security clearance (USPIS); LEOSINT-trained in open-source intelligence gathering</li>
-        </ul>
-
-        <h3>Field Training Officer & State Trooper <span class="date">07/2020 – 04/2024</span></h3>
-        <ul>
-            <li>Certified instructor: developed curriculum and trained recruits on complex procedural systems</li>
-        </ul>
-
-        <h3>Advanced Repair Agent & Communications Manager <span class="date">10/2015 – 05/2020</span></h3>
-        <p>Best Buy</p>
-        <ul>
-            <li>Diagnostics and resolution of hardware/software issues across Windows, macOS, and Linux platforms</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <h3>B.S. Computer Science — Summa Cum Laude <span class="date">2013-2017</span></h3>
-        <p>University of Advancing Technology | GPA: 3.9/4.0</p>
-    </section>
-
-    <section>
-        <h2>Certifications</h2>
-        <ul>
-            <li>Texas Apprentice Electrician License #832310</li>
-            <li>OSHA-10 Construction Safety | NFPA 70E Electrical Safety</li>
-            <li>Law Enforcement Open-Source Intelligence (LEOSINT)</li>
-        </ul>
-    </section>
-</body>
+        <!-- Scripts -->
+        <script src="assets/js/portfolio.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+    </body>
 </html>

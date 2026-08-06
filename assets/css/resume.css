@@ -1,0 +1,265 @@
+/**
+ * resume.css — Page-specific styles for the resume page.
+ * Loaded after global.css and portfolio.css.
+ * Contains ONLY resume-specific rules — everything else inherited.
+ */
+
+/* ===================================================================
+   PAGE LAYOUT
+   =================================================================== */
+
+.resume-page {
+    padding-top: calc(var(--nav-height-desktop) + var(--space-xl));
+    padding-bottom: var(--space-xxl);
+    min-height: 100vh;
+    background-color: var(--color-black);
+    background-image: radial-gradient(
+        ellipse at top right,
+        rgba(184, 134, 87, 0.08) 0%,
+        transparent 50%
+    );
+}
+
+.resume-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 var(--space-xl);
+}
+
+/* ===================================================================
+   HEADER
+   =================================================================== */
+
+.resume-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xxl);
+}
+
+.resume-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-candlelight);
+    margin: 0;
+}
+
+.resume-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    padding: 0.6rem 1.25rem;
+}
+
+/* ===================================================================
+   SECTIONS
+   =================================================================== */
+
+.resume-section {
+    margin-bottom: var(--space-xxl);
+}
+
+.resume-section-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-copper);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: 0;
+}
+
+.resume-section-title i {
+    font-size: 1.25rem;
+}
+
+.resume-divider {
+    border: none;
+    border-top: 1px solid var(--color-bronze);
+    margin: var(--space-md) 0 var(--space-lg);
+    opacity: 0.4;
+}
+
+/* ===================================================================
+   SKILLS — 3 COLUMN LAYOUT WITH VERTICAL DIVIDERS
+   =================================================================== */
+
+.skills-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.skills-column {
+    padding: 0 var(--space-md);
+}
+
+.skills-column:not(:last-child) {
+    border-right: 1px solid var(--color-bronze);
+    border-right-opacity: 0.3;
+}
+
+.skills-column-title {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-amber);
+    margin-bottom: var(--space-sm);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--color-cream);
+    padding: 0.2rem 0;
+    line-height: 1.6;
+}
+
+/* ===================================================================
+   EXPERIENCE
+   =================================================================== */
+
+.experience-item {
+    margin-bottom: var(--space-xl);
+}
+
+.experience-item:last-child {
+    margin-bottom: 0;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.experience-role {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin: 0;
+}
+
+.experience-date {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-smoke);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.experience-date i {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.experience-org {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--color-copper);
+    margin: 0.25rem 0 var(--space-sm);
+}
+
+.experience-desc {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--color-smoke);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===================================================================
+   CERTIFICATIONS
+   =================================================================== */
+
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cert-list li {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--color-cream);
+    padding: 0.4rem 0;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(184, 134, 87, 0.15);
+}
+
+.cert-list li:last-child {
+    border-bottom: none;
+}
+
+/* ===================================================================
+   RESPONSIVE
+   =================================================================== */
+
+@media (max-width: 1199px) {
+    .skills-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-column:nth-child(2) {
+        border-right: none;
+    }
+
+    .skills-column:nth-child(1) {
+        border-right: 1px solid var(--color-bronze);
+    }
+}
+
+@media (max-width: 767px) {
+    .resume-page {
+        padding-top: calc(var(--nav-height-mobile) + var(--space-lg));
+    }
+
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skills-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-column {
+        padding: 0;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(184, 134, 87, 0.2);
+        padding-bottom: var(--space-md);
+        margin-bottom: var(--space-md);
+    }
+
+    .skills-column:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .experience-date {
+        font-size: 0.8125rem;
+    }
+}
