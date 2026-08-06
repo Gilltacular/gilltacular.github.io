@@ -602,3 +602,29 @@ section {
         display: block;
     }
 }
+
+/* ===================================================================
+   SCROLL FADE-IN ANIMATION
+   Sections fade from opacity 0.3 → 0.9 with upward slide
+   =================================================================== */
+
+.scroll-fade {
+    opacity: 0.3;
+    transform: translateY(15px);
+    transition: opacity 1.4s cubic-bezier(0.2, 0.6, 0.3, 1),
+                transform 1.4s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+
+.scroll-fade.visible {
+    opacity: 0.9;
+    transform: translateY(0);
+}
+
+/* Reduced motion — skip animation, content visible */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-fade {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+}

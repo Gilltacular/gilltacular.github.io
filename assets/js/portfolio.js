@@ -146,6 +146,9 @@ window.PortfolioNav = {
             window.HeroBeats.start();
         }, 2000);
 
+        // Feature: Scroll fade-in animation
+        window.ScrollFade.init();
+        
         console.log('[PortfolioNav] Initialized');
     }
 };
@@ -236,6 +239,58 @@ window.HeroBeats = {
         this.timeoutId = setTimeout(function() {
             self.advance();
         }, this.PHASES[0].duration);
+    }
+};
+
+/**
+ * ScrollFade — Triggers fade-in animation when sections enter viewport.
+ * Uses IntersectionObserver with stagger timing (300ms between elements).
+ */
+window.ScrollFade = {
+
+    OBSERVER_THRESHOLD: 0.15,  // Trigger when 15% of section visible
+    STAGGER_DELAY_MS: 300,
+    lastTriggerTime: 0,
+
+    /**
+     * Callback fired when observed section crosses threshold.
+     */
+    onIntersect: function(entries) {
+        var self = this;
+        var now = Date.now();
+
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                // Stagger: only allow 1 element per STAGGER_DELAY_MS
+                if (now - self.lastTriggerTime >= self.STAGGER_DELAY_MS) {
+                    entry.target.classList.add('visible');
+                    self.lastTriggerTime = now;
+                }
+            }
+        });
+    },
+
+    /**
+     * Sets up IntersectionObserver on all .scroll-fade elements.
+     */
+    init: function() {
+        var self = this;
+        var elements = document.querySelectorAll('.scroll-fade');
+
+        if (elements.length === 0) return;
+
+        var observer = new IntersectionObserver(function(entries) {
+            self.onIntersect(entries);
+        }, {
+            threshold: this.OBSERVER_THRESHOLD,
+            rootMargin: '0px 0px -50px 0px'  // Trigger 50px before section fully visible
+        });
+
+        elements.forEach(function(el) {
+            observer.observe(el);
+        });
+
+        console.log('[ScrollFade] Initialized');
     }
 };
 
