@@ -81,21 +81,102 @@
 }
 
 .hero-content {
-    padding-left:   var(--space-xl);
-    max-width:      40vw;
+    position:       absolute;
+    top:            50%;
+    left:           5%;
+    transform:      translateY(-50%);
+    max-width:      35vw;
+    z-index:        2;
 }
 
-.hero h1 {
-    font-size:      4rem;
-    color:          var(--color-cream);
+.hero-name {
+    font-family:    var(--font-heading);
+    font-size:      clamp(1.5rem, 4vw, 2.5rem);
+    font-weight:    700;
+    color:          var(--color-candlelight);
+    line-height:    1.2;
     margin-bottom:  var(--space-md);
 }
 
-.hero p {
-    font-family:    var(--font-body);
-    font-size:      1.5rem;
-    color:          var(--color-smoke);
-    line-height:    var(--line-height-body);
+.hero-beat {
+    font-family:    var(--font-heading);
+    font-size:      clamp(1.5rem, 4vw, 2.5rem);
+    font-weight:    600;
+    color:          var(--color-cream);
+    line-height:    1.6;
+    white-space:    nowrap;
+}
+
+/* Hero Static Name (larger, top line) */
+.hero-static-name {
+    font-family:    var(--font-heading);
+    font-size:      clamp(1.75rem, 4vw, 2.75rem);
+    font-weight:    900;
+    color:          var(--color-candlelight);
+    line-height:    1.1;
+    white-space:    nowrap;
+    margin-bottom:  var(--space-sm);
+}
+
+/* Hero Static Description (smaller, bottom line) */
+.hero-static-desc {
+    font-family:    var(--font-heading);
+    font-size:      clamp(1.25rem, 3vw, 1.75rem);
+    font-weight:    600;
+    color:          var(--color-cream);
+    line-height:    1.3;
+    white-space:    nowrap;
+}
+
+/* Static phase container needs extra height */
+.hero-phase[data-phase="4"] {
+    min-height: 3.5rem;
+}
+
+/* ===================================================================
+   HERO BEAT ANIMATION
+   Phases overlap; JS toggles .active class to cycle visibility
+   =================================================================== */
+
+.hero-beats {
+    position: relative;
+    min-height: 8rem;       /* Space for 2 lines of beat text */
+}
+
+.hero-phase {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+}
+
+.hero-phase.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Reduced motion — show Beat 1 statically */
+@media (prefers-reduced-motion: reduce) {
+    .hero-phase {
+        transition: none;
+        position: relative;
+        opacity: 1;
+    }
+
+    .hero-phase[data-phase="2"],
+    .hero-phase[data-phase="3"],
+    .hero-phase[data-phase="4"] {
+        display: none;
+    }
+}
+
+/* Mobile adjustment for beat container */
+@media (max-width: 767px) {
+    .hero-beats {
+        min-height: 6rem;
+    }
 }
 
 /* ===================================================================
@@ -109,7 +190,9 @@ section {
 }
 
 .section-title {
-    font-size:      2.5rem;
+    font-size:      clamp(1.25rem, 3vw, 1.75rem);
+    font-weight:    600;
+    line-height:    1.3;
     margin-bottom:  var(--space-lg);
 }
 
@@ -214,9 +297,10 @@ section {
 }
 
 .about-bio {
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: var(--color-smoke);
     margin-bottom: var(--space-lg);
+    max-width: 65ch;
 }
 
 .skills-grid {
@@ -349,8 +433,17 @@ section {
 
 /* Tablet */
 @media (max-width: 1199px) {
-    .hero h1 {
-        font-size: 3rem;
+    .hero-content {
+        left: 5%;
+        max-width: 45vw;
+    }
+
+    .hero-static-name {
+        font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    }
+
+    .hero-static-desc {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
     }
 
     .projects-grid {
@@ -371,16 +464,30 @@ section {
     }
 
     .hero-content {
-        padding-left:   var(--space-lg);
-        max-width:      90%;
+        left: 5%;
+        max-width: 90%;
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    .hero-beat {
+        white-space: normal;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .hero-static-name,
+    .hero-static-desc {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .hero-static-name {
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+    }
+
+    .hero-static-desc {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+    }
+
+    .hero-phase[data-phase="4"] {
+        min-height: auto;
     }
 
     .projects-grid {

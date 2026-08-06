@@ -141,7 +141,101 @@ window.PortfolioNav = {
         // Feature: Hero background fade-in
         self.setupHeroFadeIn();
 
+        // Feature: Hero beat animation — start 2s after page load
+        setTimeout(function() {
+            window.HeroBeats.start();
+        }, 2000);
+
         console.log('[PortfolioNav] Initialized');
+    }
+};
+
+/**
+ * HeroBeats — Cycles hero text phases.
+ * Beat 1 (5.5s) → Beat 2 (5.5s) → Beat 3 (5.5s) → Static (11s) → Loop
+ * 0.8s fade transitions between phases.
+ */
+window.HeroBeats = {
+
+    PHASES: [
+        { phase: 1, duration: 5500 },
+        { phase: 2, duration: 5500 },
+        { phase: 3, duration: 5500 },
+        { phase: 4, duration: 20000 }
+    ],
+
+    TRANSITION_MS: 800,
+
+    currentIdx: 0,
+    timeoutId: null,
+    phaseElements: [],
+
+    /**
+     * Shows a specific phase and hides all others.
+     */
+    showPhase: function(idx) {
+        this.phaseElements.forEach(function(el, i) {
+            if (i === idx) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+    },
+
+    /**
+     * Advances to the next phase, then schedules itself again.
+     */
+    advance: function() {
+        // Clear any existing timeout to prevent competing chains
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+            this.timeoutId = null;
+        }
+
+        this.currentIdx = (this.currentIdx + 1) % this.PHASES.length;
+        this.showPhase(this.currentIdx);
+
+        var duration = this.PHASES[this.currentIdx].duration;
+        var self = this;
+        this.timeoutId = setTimeout(function() {
+            self.advance();
+        }, duration);
+    },
+
+    /**
+     * Starts the beat animation cycle.
+     */
+    isStarted: false,
+
+    start: function() {
+        if (this.isStarted) return;
+        this.isStarted = true;
+
+        var container = document.querySelector('.hero-beats');
+        if (!container) return;
+
+        this.phaseElements = Array.prototype.slice.call(
+            container.querySelectorAll('.hero-phase')
+        );
+
+        if (this.phaseElements.length === 0) return;
+
+        // Check reduced motion preference
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) {
+            this.phaseElements[0].classList.add('active');
+            return;
+        }
+
+        // Show first phase immediately
+        this.showPhase(0);
+
+        // Schedule first advance after Beat 1 duration
+        var self = this;
+        this.timeoutId = setTimeout(function() {
+            self.advance();
+        }, this.PHASES[0].duration);
     }
 };
 

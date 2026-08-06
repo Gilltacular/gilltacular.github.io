@@ -4,7 +4,7 @@
  */
 
  /* Google Fonts import */
- @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:wght@400&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap');
 
  /* Reset */
 *,
@@ -44,12 +44,12 @@ html {
     --line-height-nav:      1.0;
 
     /* Spacing scale (8px baseline) */
-    --space-xs:     0.5rem;
-    --space-sm:     1rem;
-    --space-md:     1.5rem;
-    --space-lg:     2rem;
-    --space-xl:     3rem;
-    --space-xxl:    4rem;
+    --space-xs:     0.5rem;   /* 8px */
+    --space-sm:     1rem;     /* 16px */
+    --space-md:     1.5rem;   /* 24px */
+    --space-lg:     2rem;     /* 32px */
+    --space-xl:     3rem;     /* 48px */
+    --space-xxl:    4rem;     /* 64px */
 
     /* Layout */
     --max-width:            1200px;
@@ -65,15 +65,25 @@ body {
     color:                  var(--color-smoke);
     background-color:       var(--color-black);
     line-height:            var(--line-height-body);
-    font-size:              1rem;
+    font-size:              1.125rem;
     -webkit-font-smoothing: antialiased;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family:    var(--font-heading);
-    color:          var(--color-cream);
+    color:          var(--color-candlelight);
     line-height:    var(--line-height-heading);
+}
+
+/* Captions */
+.caption {
+    font-family: var(--font-body);
+    font-size: 0.875rem;       /* 14px */
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-smoke);
 }
 
 /* Links */
