@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <title>404 — Page Not Found | Jon Gill</title>
+
+        <!-- Font Awesome for Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- Global site styles (loaded first) -->
+        <link rel="stylesheet" href="assets/css/global.css">
+        <!-- Portfolio-specific styles (loaded second, overrides global) -->
+        <link rel="stylesheet" href="assets/css/portfolio.css">
+        <!-- 404-specific styles (loaded last) -->
+        <link rel="stylesheet" href="assets/css/404.css">
+    </head>
+    <body>
+
+        <!-- ===== NAVIGATION (identical to index.html) ===== -->
+        <nav class="navbar">
+            <a href="#hero" class="navbar-brand">Jon Gill</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="navbar-nav">
+                <li><a href="/#hero" data-nav-target="hero">Home</a></li>
+                <li><a href="/#about" data-nav-target="about">About</a></li>
+                <li><a href="/#projects" data-nav-target="projects">Projects</a></li>
+                <li><a href="/blog/index.html">Blog</a></li>
+                <li><a href="/#contact" data-nav-target="contact">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button (Mobile only) -->
+            <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- ===== 404 ERROR SECTION ===== -->
+        <section class="error-section">
+            <!-- Illustration Background — Responsive WebP images -->
+            <picture>
+                <source media="(min-width: 1200px)" srcset="assets/images/404/404-bg-desktop.webp">
+                <source media="(min-width: 768px)" srcset="assets/images/404/404-bg-tablet.webp">
+                <img src="assets/images/404/404-bg-mobile_portrait.webp"
+                     alt=""
+                     class="error-illustration"
+                     aria-hidden="true">
+            </picture>
+
+            <!-- Content -->
+            <div class="error-content">
+                <h1 class="error-primary">This path was not forged.</h1>
+                <p class="error-secondary">Error 404: Page Not Found</p>
+                <p class="error-prompt">The corridor ends here. Choose another path.</p>
+            </div>
+        </section>
+
+        <!-- ===== MODIFIED FOOTER (recovery links + copyright only) ===== -->
+        <footer class="site-footer-craftsman footer-404">
+            <!-- Bronze divider with anvil logo -->
+            <div class="footer-divider">
+                <div class="footer-anvil-logo">
+                    <img src="/assets/images/logo/Monogrammed_Anvil-1.png" alt="" aria-hidden="true">
+                </div>
+            </div>
+
+            <div class="footer-404-links">
+                <a href="/">Home</a>
+                <a href="/#projects">Projects</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <span class="footer-404-copy">&copy; 2026 Jon Gill</span>
+        </footer>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay">
+            <button class="close-menu-btn" aria-label="Close menu">&times;</button>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/#about">About</a>
+                <a href="/#projects">Projects</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/#contact">Contact</a>
+            </nav>
+        </div>
+
+        <!-- 404 Page Script (fade-in + mobile menu) -->
+        <script src="assets/js/portfolio.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var errorContent = document.querySelector('.error-content');
+                if (errorContent) {
+                    setTimeout(function() {
+                        errorContent.classList.add('loaded');
+                    }, 300);
+                }
+            });
+        </script>
+
+        <!-- Feather Icons -->
+        <script src="https://unpkg.com/feather-icons"></script>
+    </body>
+</html>

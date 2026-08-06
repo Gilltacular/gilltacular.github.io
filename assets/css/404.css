@@ -1,0 +1,156 @@
+/**
+ * 404.css — Page-specific styles for the 404 error page.
+ * Loaded after global.css and portfolio.css.
+ * Contains ONLY 404-specific rules — everything else inherited.
+ */
+
+/* ===================================================================
+   404 ERROR SECTION
+   =================================================================== */
+
+.error-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Illustration — full viewport background layer via picture element */
+.error-illustration {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content — centered on top of illustration */
+.error-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 600px;
+    padding: 0 var(--space-lg);
+
+    /* Fade-in animation on load */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.error-content.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scrim — radial gradient behind text for readability */
+.error-content::before {
+    content: '';
+    position: absolute;
+    inset: -2rem;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(4, 3, 3, 0.7) 0%,
+        transparent 70%
+    );
+    z-index: -1;
+}
+
+/* ===================================================================
+   TYPOGRAPHY
+   =================================================================== */
+
+.error-primary {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--color-candlelight);
+    margin-bottom: var(--space-sm);
+}
+
+.error-secondary {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-smoke);
+    margin-bottom: var(--space-md);
+}
+
+.error-prompt {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.875rem;
+    color: var(--color-smoke);
+    margin-bottom: var(--space-xl);
+}
+
+/* ===================================================================
+   MODIFIED FOOTER (404 — recovery links + copyright)
+   =================================================================== */
+
+.footer-404 {
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.footer-404-links {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.footer-404-links a {
+    color: var(--color-copper);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.footer-404-links a:hover {
+    color: var(--color-amber);
+}
+
+.footer-404-copy {
+    color: var(--color-smoke);
+    font-size: 0.875rem;
+}
+
+/* ===================================================================
+   RESPONSIVE BREAKPOINTS
+   =================================================================== */
+
+/* Tablet and below — switch to portrait mobile background */
+@media (max-width: 1199px) {
+    .error-illustration {
+        /* Picture element handles source switching via media queries */
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .error-content {
+        max-width: 90%;
+    }
+
+    .footer-404 {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+}
+
+/* ===================================================================
+   REDUCED MOTION — disable fade-in
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .error-content {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
