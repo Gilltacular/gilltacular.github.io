@@ -234,8 +234,15 @@ section {
     margin-bottom: var(--space-sm);
 }
 
-/* Status badge base styles */
-.status-badge {
+/* ===================================================================
+   BADGE SYSTEM
+   Status indicators — forge coal glow underneath
+   =================================================================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-body);
     font-size: 0.625rem;
     text-transform: uppercase;
@@ -243,35 +250,106 @@ section {
     padding: 0.2rem 0.5rem;
     border-radius: 2px;
     white-space: nowrap;
+    min-height: 1.5rem;
+    line-height: 1.4;
+    position: relative;
 }
 
-/* WIP status variant (COPPER by default) */
-.status-wip {
+/* Align badges to top of header */
+.project-card-header {
+    align-items: flex-start;
+}
+
+/* Base: In Development — forge coal glow underneath */
+.badge--in-development {
     background: transparent;
     border: 1px solid var(--color-copper);
     color: var(--color-copper);
+    transition: all 0.3s ease;
 }
 
-.project-card p {
-    font-size:      1rem;
-    color:          var(--color-smoke);
-    margin-bottom:  var(--space-sm);
+/* Forge coal glow underneath (hot ember effect) */
+.badge--in-development::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        rgba(184, 134, 87, 0) 0%,
+        rgba(238, 178, 121, 0.5) 50%,
+        rgba(184, 134, 87, 0) 100%
+    );
+    animation: forge-coal-glow 3s ease-in-out infinite;
 }
 
-.tech-stack {
-    display:        flex;
-    flex-wrap:      wrap;
-    gap:            var(--space-xs);
-    margin:         var(--space-sm);
+/* Coal glow animation — gentle pulsing heat from below */
+@keyframes forge-coal-glow {
+    0%, 100% {
+        opacity: 0.5;
+        filter: blur(1px);
+    }
+    50% {
+        opacity: 1;
+        filter: blur(2px);
+    }
 }
 
-.tech-tag {
-    background:     transparent;
-    border:         1px solid var(--color-copper);
-    border-radius:  2px;
-    padding:        0.25rem 0.5rem;
-    font-size:      0.75rem;
-    color:          var(--color-copper);
+/* HOVER — Triggered by CARD HOVER, refined intensity */
+.project-card:hover .badge--in-development {
+    border: 1.5px solid var(--color-amber);
+    background: rgba(184, 134, 87, 0.1);
+    color: var(--color-amber);
+}
+
+.project-card:hover .badge--in-development::after {
+    height: 3px;
+    bottom: -6px;
+    left: 5%;
+    right: 5%;
+    background: linear-gradient(90deg,
+        rgba(184, 134, 87, 0) 0%,
+        rgba(184, 134, 87, 0.7) 50%,
+        rgba(184, 134, 87, 0) 100%
+    );
+    filter: blur(2px);
+}
+
+/* Complete — solid/stable appearance */
+.badge--complete {
+    background: var(--color-copper);
+    border: 1px solid var(--color-copper);
+    color: var(--color-black);
+}
+
+/* Archived — muted appearance */
+.badge--archived {
+    background: transparent;
+    border: 1px solid var(--color-bronze);
+    color: var(--color-smoke);
+}
+
+/* Reduced motion — disable all animations */
+@media (prefers-reduced-motion: reduce) {
+    .badge--in-development::after {
+        animation: none;
+        opacity: 0.5;
+    }
+
+    .project-card:hover .badge--in-development {
+        background: transparent;
+        border-color: var(--color-copper);
+        color: var(--color-copper);
+    }
+
+    .project-card:hover .badge--in-development::after {
+        height: 2px;
+        bottom: -4px;
+        left: 15%;
+        right: 15%;
+        filter: blur(1px);
+    }
 }
 
 /* ===================================================================
@@ -393,16 +471,19 @@ section {
 }
 
 /* ===================================================================
-   PROJECT CARDS — Additional Styles
+   PROJECT CARDS
    =================================================================== */
 
-.card-link {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    color: var(--color-copper);
-    text-decoration: underline;
-    margin-top: var(--space-sm);
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    justify-items: stretch;
+}
+
+/* Widen the projects section beyond the 800px section-inner default */
+#projects .section-inner {
+    max-width: 1100px;
 }
 
 /* ===================================================================
