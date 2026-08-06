@@ -197,41 +197,154 @@ section {
 }
 
 /* ===================================================================
-   PROJECT CARDS
-   Flat minimalist placeholder style
+   PROJECT CARDS — ALTERNATING LAYOUT WITH HOVER EFFECTS
    =================================================================== */
 
-.projects-grid {
-    display:                grid;
-    grid-template-columns:  repeat(3, 1fr);
-    gap:                    var(--space-lg);
+.project-card-wrapper {
+    display: flex;
+    position: relative;
+    margin-bottom: var(--space-xl);
+    max-width: 700px;
+}
+
+.project-card-wrapper:nth-child(even) {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.project-card-wrapper:nth-child(odd) {
+    justify-content: flex-start;
+}
+
+.card-link-overlay {
+    display: block;
+    position: relative;
+    z-index: 3;  /* Card content on top */
+    width: 100%;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
 .project-card {
-    background:     var(--color-dark-brown);
-    border:         1px solid var(--color-bronze);
-    border-radius:  var(--border-radius);
-    padding:        var(--space-md);
-    transition:     border-color 0.2s ease;
+    background: var(--color-dark-brown);
+    border: 1px solid var(--color-bronze);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    position: relative;
+    transition: border-color 0.3s ease;
 }
 
-.project-card:hover {
-    border-color:   var(--color-copper);
+.project-card-wrapper:hover .card-link-overlay {
+    transform: translateY(-4px);
+}
+
+/* ===================================================================
+   COAL GLOW PULSE — red/orange/yellow cycling, continuous on hover
+   =================================================================== */
+
+.project-card-wrapper:hover .project-card {
+    animation: coal-glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes coal-glow-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 6px 28px 3px rgba(220, 50, 20, 0.15),
+            inset 0 -3px 12px 2px rgba(180, 30, 10, 0.1);
+    }
+    33% {
+        box-shadow: 
+            0 6px 32px 5px rgba(255, 140, 0, 0.25),
+            inset 0 -3px 14px 2px rgba(220, 60, 20, 0.15);
+    }
+    66% {
+        box-shadow: 
+            0 6px 30px 4px rgba(255, 200, 30, 0.2),
+            inset 0 -3px 14px 2px rgba(200, 50, 20, 0.12);
+    }
+}
+
+/* ===================================================================
+   CARD CONTENT
+   =================================================================== */
+
+.project-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
 }
 
 .project-card h3 {
-    font-size:      1.5rem;
-    margin-bottom:  var(--space-sm);
-    color:          var(--color-cream);
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    color: var(--color-cream);
 }
 
-/* Project card header wrapper for title + badge */
-.project-card-header {
+.project-card > p {
+    font-size: 1rem;
+    color: var(--color-smoke);
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+.tech-stack {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-sm);
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+}
+
+.tech-tag {
+    background: transparent;
+    border: 1px solid var(--color-bronze);
+    border-radius: 2px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-candlelight);
+}
+
+.card-arrow {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    font-size: 1.25rem;
+    color: var(--color-copper);
+    opacity: 0;
+    transform: translateX(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card-wrapper:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===================================================================
+   REDUCED MOTION + MOBILE
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card-wrapper:hover .project-card {
+        animation: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .project-card-wrapper {
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
+    }
+
+    .card-arrow {
+        display: none;
+    }
+
+    .project-card-wrapper:hover .project-card {
+        animation: none;
+        box-shadow: none;
+    }
 }
 
 /* ===================================================================
