@@ -43,15 +43,12 @@ window.PortfolioNav = {
 
         var activeClass = this.NAV_ACTIVE_CLASS;
 
-        // Callback runs when observed sections enter/leave viewport
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    // Remove active from all nav links
                     navLinks.forEach(function(link) {
                         link.classList.remove(activeClass);
                     });
-                    // Add active to matching nav link
                     var target = entry.target.id;
                     navLinks.forEach(function(link) {
                         if (link.getAttribute('data-nav-target') === target) {
@@ -61,11 +58,9 @@ window.PortfolioNav = {
                 }
             });
         }, {
-            // Trigger when ~50% of section is visible
             threshold: 0.5
         });
 
-        // Start observing each section
         sections.forEach(function(section) {
             observer.observe(section);
         });
@@ -80,7 +75,6 @@ window.PortfolioNav = {
 
         var loadedClass = this.HERO_LOADED_CLASS;
 
-        // Create temporary image to detect when WebP finishes loading
         var img = new Image();
         img.src = '/assets/hero-backgrounds/hero-bg-desktop.webp';
 
@@ -96,47 +90,10 @@ window.PortfolioNav = {
         }, 2000);
     },
 
-    /**
-     * Wires up all event listeners after DOM is ready.
-     */
+    
+    // Wires up all event listeners
     init: function() {
         var self = this;
-
-        var hamburger = document.querySelector('.hamburger-btn');
-        var closeBtn = document.querySelector('.' + this.CLOSE_BTN_CLASS);
-        var overlay = document.getElementById(this.OVERLAY_ID);
-
-        if (!hamburger || !overlay) return;
-
-        // Mobile menu: toggle on hamburger click
-        hamburger.addEventListener('click', function() {
-            self.toggleMenu(false);
-        });
-
-        // Mobile menu: close on X button
-        if (closeBtn) {
-            closeBtn.addEventListener('click', function() {
-                self.toggleMenu(true);
-            });
-        }
-
-        // Mobile menu: close on nav link click
-        var menuLinks = overlay.querySelectorAll('a');
-        menuLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                self.toggleMenu(true);
-            });
-        });
-
-        // Mobile menu: close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' || e.keyCode === 27) {
-                self.toggleMenu(true);
-            }
-        });
-
-        // Feature: Active nav highlighting
-        self.setupActiveNav();
 
         // Feature: Hero background fade-in
         self.setupHeroFadeIn();
@@ -149,12 +106,16 @@ window.PortfolioNav = {
         // Feature: Scroll fade-in animation
         window.ScrollFade.init();
 
-        // Feature: Initialize Feather Icons
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }       
-        
-        console.log('[PortfolioNav] Initialized');
+        console.log('[PortfolioNav] Initialized (DOMContentLoaded)');
+
+        // --- Navbar-dependent features (wait for components:loaded) ---
+
+        document.addEventListener('components:loaded', function() {
+            // Feature: Active nav highlighting (needs navbar links in DOM)
+            self.setupActiveNav();
+
+            console.log('[PortfolioNav] Initialized (components:loaded)');
+        });
     }
 };
 
@@ -169,7 +130,7 @@ window.HeroBeats = {
         { phase: 1, duration: 5500 },
         { phase: 2, duration: 5500 },
         { phase: 3, duration: 5500 },
-        { phase: 4, duration: 20000 }
+        { phase: 4, duration: 11000 }
     ],
 
     TRANSITION_MS: 800,
@@ -178,9 +139,8 @@ window.HeroBeats = {
     timeoutId: null,
     phaseElements: [],
 
-    /**
-     * Shows a specific phase and hides all others.
-     */
+    isStarted: false,
+
     showPhase: function(idx) {
         this.phaseElements.forEach(function(el, i) {
             if (i === idx) {
@@ -191,11 +151,7 @@ window.HeroBeats = {
         });
     },
 
-    /**
-     * Advances to the next phase, then schedules itself again.
-     */
     advance: function() {
-        // Clear any existing timeout to prevent competing chains
         if (this.timeoutId) {
             clearTimeout(this.timeoutId);
             this.timeoutId = null;
@@ -211,11 +167,6 @@ window.HeroBeats = {
         }, duration);
     },
 
-    /**
-     * Starts the beat animation cycle.
-     */
-    isStarted: false,
-
     start: function() {
         if (this.isStarted) return;
         this.isStarted = true;
@@ -229,17 +180,14 @@ window.HeroBeats = {
 
         if (this.phaseElements.length === 0) return;
 
-        // Check reduced motion preference
         var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReduced) {
             this.phaseElements[0].classList.add('active');
             return;
         }
 
-        // Show first phase immediately
         this.showPhase(0);
 
-        // Schedule first advance after Beat 1 duration
         var self = this;
         this.timeoutId = setTimeout(function() {
             self.advance();
@@ -247,26 +195,19 @@ window.HeroBeats = {
     }
 };
 
-/**
- * ScrollFade — Triggers fade-in animation when sections enter viewport.
- * Uses IntersectionObserver with stagger timing (300ms between elements).
- */
+// ScrollFade — Triggers fade-in animation when sections enter viewport
 window.ScrollFade = {
 
-    OBSERVER_THRESHOLD: 0.15,  // Trigger when 15% of section visible
+    OBSERVER_THRESHOLD: 0.15,
     STAGGER_DELAY_MS: 300,
     lastTriggerTime: 0,
 
-    /**
-     * Callback fired when observed section crosses threshold.
-     */
     onIntersect: function(entries) {
         var self = this;
         var now = Date.now();
 
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                // Stagger: only allow 1 element per STAGGER_DELAY_MS
                 if (now - self.lastTriggerTime >= self.STAGGER_DELAY_MS) {
                     entry.target.classList.add('visible');
                     self.lastTriggerTime = now;
@@ -275,9 +216,6 @@ window.ScrollFade = {
         });
     },
 
-    /**
-     * Sets up IntersectionObserver on all .scroll-fade elements.
-     */
     init: function() {
         var self = this;
         var elements = document.querySelectorAll('.scroll-fade');
@@ -288,7 +226,7 @@ window.ScrollFade = {
             self.onIntersect(entries);
         }, {
             threshold: this.OBSERVER_THRESHOLD,
-            rootMargin: '0px 0px -50px 0px'  // Trigger 50px before section fully visible
+            rootMargin: '0px 0px -50px 0px'
         });
 
         elements.forEach(function(el) {
@@ -299,7 +237,7 @@ window.ScrollFade = {
     }
 };
 
-// Initialize when DOM fully parsed
+// in init() with an early return guard
 document.addEventListener('DOMContentLoaded', function() {
     window.PortfolioNav.init();
 });

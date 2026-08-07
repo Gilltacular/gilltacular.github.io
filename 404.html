@@ -18,26 +18,8 @@
     </head>
     <body>
 
-        <!-- ===== NAVIGATION (identical to index.html) ===== -->
-        <nav class="navbar">
-            <a href="#hero" class="navbar-brand">Jon Gill</a>
-
-            <!-- Desktop Navigation -->
-            <ul class="navbar-nav">
-                <li><a href="/#hero" data-nav-target="hero">Home</a></li>
-                <li><a href="/#about" data-nav-target="about">About</a></li>
-                <li><a href="/#projects" data-nav-target="projects">Projects</a></li>
-                <li><a href="/blog/index.html">Blog</a></li>
-                <li><a href="/#contact" data-nav-target="contact">Contact</a></li>
-            </ul>
-
-            <!-- Hamburger Menu Button (Mobile only) -->
-            <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+        <!-- ===== NAVBAR (injected via components.js) ===== -->
+        <div id="navbar-mount"></div>
 
         <!-- ===== 404 ERROR SECTION ===== -->
         <section class="error-section">
@@ -76,17 +58,8 @@
             <span class="footer-404-copy">&copy; 2026 Jon Gill</span>
         </footer>
 
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="mobile-menu-overlay">
-            <button class="close-menu-btn" aria-label="Close menu">&times;</button>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/#about">About</a>
-                <a href="/#projects">Projects</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/#contact">Contact</a>
-            </nav>
-        </div>
+         <!-- Component injection (loaded before portfolio.js) -->
+        <script src="assets/js/components.js"></script>
 
         <!-- 404 Page Script (fade-in + mobile menu) -->
         <script src="assets/js/portfolio.js"></script>

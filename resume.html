@@ -18,24 +18,8 @@
     </head>
     <body>
 
-        <!-- ===== NAVIGATION ===== -->
-        <nav class="navbar">
-            <a href="/" class="navbar-brand">Jon Gill</a>
-
-            <ul class="navbar-nav">
-                <li><a href="/#hero">Home</a></li>
-                <li><a href="/#about">About</a></li>
-                <li><a href="/#projects">Projects</a></li>
-                <li><a href="/blog/index.html">Blog</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
-
-            <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+        <!-- ===== NAVBAR (injected via components.js) ===== -->
+        <div id="navbar-mount"></div>
 
         <!-- ===== RESUME PAGE ===== -->
         <main class="resume-page">
@@ -178,47 +162,10 @@
         </main>
 
         <!-- ===== FOOTER ===== -->
-        <footer class="site-footer-craftsman">
-            <div class="footer-divider">
-                <div class="footer-anvil-logo">
-                    <img src="/assets/images/logo/Monogrammed_Anvil-1.png" alt="" aria-hidden="true">
-                </div>
-            </div>
-
-            <div class="footer-grid">
-                <div class="footer-left"></div>
-
-                <div class="footer-center">
-                    <a href="mailto:jonpgill@protonmail.com" aria-label="Email" class="footer-link">
-                        <i data-feather="mail"></i>
-                    </a>
-                    <a href="https://github.com/Gilltacular" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-link">
-                        <i data-feather="github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/jongill" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-link">
-                        <i data-feather="linkedin"></i>
-                    </a>
-                </div>
-
-                <div class="footer-right">
-                    <span>&copy; 2026 Jon Gill</span>
-                </div>
-            </div>
-        </footer>
-
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="mobile-menu-overlay">
-            <button class="close-menu-btn" aria-label="Close menu">&times;</button>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/#about">About</a>
-                <a href="/#projects">Projects</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/#contact">Contact</a>
-            </nav>
-        </div>
+        <div id="footer-mount"></div>
 
         <!-- Scripts -->
+        <script src="assets/js/components.js"></script>
         <script src="assets/js/portfolio.js"></script>
         <script src="https://unpkg.com/feather-icons"></script>
     </body>

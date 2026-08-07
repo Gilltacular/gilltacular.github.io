@@ -130,3 +130,28 @@ a:hover {
     font-size:  0.875rem;
 }
 
+/* ===================================================================
+   COMPONENT MOUNT POINTS
+   Placeholder styling — invisible against page background
+   Prevents layout shift while components load via JS
+   =================================================================== */
+
+#navbar-mount {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height-desktop);
+    background: var(--color-black);
+    z-index: 1000;
+}
+
+#footer-mount {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    #navbar-mount {
+        height: var(--nav-height-mobile);
+    }
+}
